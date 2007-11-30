@@ -1,0 +1,5 @@
+.formError { font-weight:bold; color:red; }
+th {background-color: #27049d; color:white;}
+td {padding:3px;}
+.odd-item {background-color:#ebf5ff;}
+.even-item {background-color:white;}

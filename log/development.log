@@ -16791,3 +16791,427 @@ Rendering family_groups/index
   [4;36;1mFamilyGroup Columns (0.000990)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
   [4;35;1mFamilyGroup Load (0.000137)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
 Completed in 0.13557 (7 reqs/sec) | Rendering: 0.11374 (83%) | DB: 0.00339 (2%) | 200 OK [http://localhost/family_groups/find_person]
+
+
+Processing FamilyGroupsController#index (for 127.0.0.1 at 2007-11-30 11:29:03) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"index", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000122)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000061)[0m   [0mSET NAMES 'UTF8'[0m
+Rendering  within layouts/application
+Rendering family_groups/index
+Completed in 0.02076 (48 reqs/sec) | Rendering: 0.00746 (35%) | DB: 0.00018 (0%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-30 11:29:04) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/stylesheets/matricula.css" with {:method=>:get}):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1325:in `recognize_path'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1315:in `recognize'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:40:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing FamilyGroupsController#find_person (for 127.0.0.1 at 2007-11-30 11:29:07) [POST]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"commit"=>"Buscar persona", "search_criteria"=>"bad", "action"=>"find_person", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000127)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mStudent Load (0.000173)[0m   [0mSELECT * FROM students WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+  [4;36;1mAdult Load (0.000116)[0m   [0;1mSELECT * FROM adults WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+Rendering actionindexlayoutfalse within layouts/application
+Rendering family_groups/index
+  [4;35;1mStudent Columns (0.001091)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mFamilyGroup Columns (0.000712)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000068)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Completed in 0.03095 (32 reqs/sec) | Rendering: 0.01659 (53%) | DB: 0.00229 (7%) | 200 OK [http://localhost/family_groups/find_person]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-30 11:29:07) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/stylesheets/matricula.css" with {:method=>:get}):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1325:in `recognize_path'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1315:in `recognize'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:40:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:29:08) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000171)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000714)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000069)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000890)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000075)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000985)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000076)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001059)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000076)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000078)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000076)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000068)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000074)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAdult Load (0.000118)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.05876 (17 reqs/sec) | Rendering: 0.02143 (36%) | DB: 0.00467 (7%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-30 11:29:08) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/stylesheets/matricula.css" with {:method=>:get}):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1325:in `recognize_path'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1315:in `recognize'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:40:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:29:14) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"4", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000201)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAdult Columns (0.001556)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000186)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Columns (0.001056)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000133)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000116)[0m   [0mBEGIN[0m
+  [4;36;1mFamilyGroup Update (0.000348)[0m   [0;1mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 4 WHERE `id` = 22[0m
+  [4;35;1mSQL (0.006513)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.13477 (7 reqs/sec) | DB: 0.01011 (7%) | 302 Found [http://localhost/family_groups/set_guardian/4]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:29:15) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000200)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000911)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000331)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001206)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000199)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001305)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000147)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001427)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000148)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000171)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000174)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Load (0.000126)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000140)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mAdult Load (0.000156)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+Completed in 0.08012 (12 reqs/sec) | Rendering: 0.02708 (33%) | DB: 0.00693 (8%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-30 11:29:15) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/stylesheets/matricula.css" with {:method=>:get}):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1325:in `recognize_path'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1315:in `recognize'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:40:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:29:17) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"6", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000182)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAdult Columns (0.001529)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000153)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Columns (0.000897)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000124)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000109)[0m   [0mBEGIN[0m
+  [4;36;1mFamilyGroup Update (0.000341)[0m   [0;1mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 6 WHERE `id` = 22[0m
+  [4;35;1mSQL (0.004686)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.03787 (26 reqs/sec) | DB: 0.00802 (21%) | 302 Found [http://localhost/family_groups/set_guardian/6]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:29:17) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000981)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000321)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001355)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000149)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001373)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000121)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001477)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000124)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000124)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000129)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000099)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000120)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAdult Load (0.000134)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.17287 (5 reqs/sec) | Rendering: 0.02593 (15%) | DB: 0.00692 (4%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-30 11:29:17) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/stylesheets/matricula.css" with {:method=>:get}):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1325:in `recognize_path'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/routing.rb:1315:in `recognize'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:40:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:30:49) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000430)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000918)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000105)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001204)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000120)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001392)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000119)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001451)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000128)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000113)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000125)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000104)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000119)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAdult Load (0.000139)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.07694 (12 reqs/sec) | Rendering: 0.02472 (32%) | DB: 0.00670 (8%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:30:52) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"4", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000181)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAdult Columns (0.001501)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000149)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Columns (0.000896)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000382)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000087)[0m   [0mBEGIN[0m
+  [4;36;1mFamilyGroup Update (0.000333)[0m   [0;1mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 4 WHERE `id` = 22[0m
+  [4;35;1mSQL (0.007252)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.03982 (25 reqs/sec) | DB: 0.01078 (27%) | 302 Found [http://localhost/family_groups/set_guardian/4]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:30:52) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.001522)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000650)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000208)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000816)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000094)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001146)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000091)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.000941)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000076)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000092)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000086)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000091)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Load (0.000075)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000087)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mAdult Load (0.000118)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+Completed in 0.05125 (19 reqs/sec) | Rendering: 0.01574 (30%) | DB: 0.00619 (12%) | 200 OK [http://localhost/family_groups/edit/22]
