@@ -16767,3 +16767,27 @@ Processing FamilyGroupsController#edit_student (for 127.0.0.1 at 2007-11-30 11:1
 Rendering  within layouts/application
 Rendering family_groups/edit_student
 Completed in 0.05419 (18 reqs/sec) | Rendering: 0.02018 (37%) | DB: 0.00361 (6%) | 200 OK [http://localhost/family_groups/edit_student/2]
+
+
+Processing FamilyGroupsController#index (for 127.0.0.1 at 2007-11-30 11:28:08) [GET]
+  Session ID: 81c3b31b95390616230a40eae83a81e6
+  Parameters: {"action"=>"index", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000241)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000098)[0m   [0mSET NAMES 'UTF8'[0m
+Rendering  within layouts/application
+Rendering family_groups/index
+Completed in 0.03453 (28 reqs/sec) | Rendering: 0.01225 (35%) | DB: 0.00034 (0%) | 200 OK [http://localhost/]
+
+
+Processing FamilyGroupsController#find_person (for 127.0.0.1 at 2007-11-30 11:28:11) [POST]
+  Session ID: 81c3b31b95390616230a40eae83a81e6
+  Parameters: {"commit"=>"Buscar persona", "search_criteria"=>"bad", "action"=>"find_person", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000171)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mStudent Load (0.000268)[0m   [0mSELECT * FROM students WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+  [4;36;1mAdult Load (0.000186)[0m   [0;1mSELECT * FROM adults WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+Rendering actionindexlayoutfalse within layouts/application
+Rendering family_groups/index
+  [4;35;1mStudent Columns (0.001639)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mFamilyGroup Columns (0.000990)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000137)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Completed in 0.13557 (7 reqs/sec) | Rendering: 0.11374 (83%) | DB: 0.00339 (2%) | 200 OK [http://localhost/family_groups/find_person]
