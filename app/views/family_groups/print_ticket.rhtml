@@ -2,7 +2,7 @@
 <table>
   <tr>
     <td>
-      <img src=/images/logo_san_alberto_bn.png />
+      <!--      <img src=/images/logo_san_alberto_bn.png /> -->
     </td>
   </tr>
   <tr>
@@ -28,7 +28,7 @@
         <br />
         <ul>
           <% @adults.each do |c| %>
-          <li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %>.-</li>
+          <% if c.income > 0 %><li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %>.-</li><% end %>
           <% end %>
         </ul>
         <br />
@@ -83,9 +83,6 @@
     </td>
   </tr>
 </table>
-<br />
-<br />
-<br />
 <br />
 <br />
 

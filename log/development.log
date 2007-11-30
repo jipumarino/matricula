@@ -17756,3 +17756,141 @@ Rendering family_groups/edit
   [4;35;1mAddress Load (0.000319)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
   [4;36;1mAdult Load (0.000199)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
 Completed in 0.08388 (11 reqs/sec) | Rendering: 0.03099 (36%) | DB: 0.00857 (10%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#index (for 192.168.1.168 at 2007-11-30 12:02:15) [GET]
+  Session ID: 15e330a9c0a8086f184a6094bf901544
+  Parameters: {"action"=>"index", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.001009)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000386)[0m   [0mSET NAMES 'UTF8'[0m
+Rendering  within layouts/application
+Rendering family_groups/index
+Completed in 0.22884 (4 reqs/sec) | Rendering: 0.05295 (23%) | DB: 0.00139 (0%) | 200 OK [http://192.168.1.12/]
+
+
+Processing FamilyGroupsController#find_person (for 192.168.1.168 at 2007-11-30 12:02:17) [POST]
+  Session ID: 15e330a9c0a8086f184a6094bf901544
+  Parameters: {"commit"=>"Buscar persona", "search_criteria"=>"bad", "action"=>"find_person", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000496)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mStudent Load (0.000000)[0m   [0mMysql::Error: Table 'matricula_development.students' doesn't exist: SELECT * FROM students WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'matricula_development.students' doesn't exist: SELECT * FROM students WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%'))  ORDER BY fathers_name, mothers_name):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/connection_adapters/abstract_adapter.rb:128:in `log'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/connection_adapters/mysql_adapter.rb:243:in `execute'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/connection_adapters/mysql_adapter.rb:399:in `select'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/base.rb:427:in `find_by_sql'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/base.rb:997:in `find_every'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6/lib/active_record/base.rb:418:in `find'
+    /home/jipumarino/devel/matricula2/app/models/student.rb:11:in `find_by_name'
+    /home/jipumarino/devel/matricula2/app/controllers/family_groups_controller.rb:127:in `find_person'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/base.rb:1101:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/base.rb:1101:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/filters.rb:696:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/base.rb:435:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/base.rb:435:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/base.rb:334:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.6/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.6/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.6/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;36;1mSQL (0.000635)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.146984)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.066530)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.049789)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateAdults (1)
+  [4;35;1mSQL (0.470718)[0m   [0mCREATE TABLE adults (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `run` varchar(255) DEFAULT NULL, `fathers_name` varchar(255) DEFAULT NULL, `mothers_name` varchar(255) DEFAULT NULL, `names` varchar(255) DEFAULT NULL, `sex` varchar(255) DEFAULT NULL, `birthday` date DEFAULT NULL, `education_level` varchar(255) DEFAULT NULL, `occupation` varchar(255) DEFAULT NULL, `income` int(11) DEFAULT NULL, `family_group_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.024085)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000656)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateStudents (2)
+  [4;36;1mSQL (0.078503)[0m   [0;1mCREATE TABLE students (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `run` varchar(255) DEFAULT NULL, `fathers_name` varchar(255) DEFAULT NULL, `mothers_name` varchar(255) DEFAULT NULL, `names` varchar(255) DEFAULT NULL, `sex` varchar(255) DEFAULT NULL, `birthday` date DEFAULT NULL, `current_level` varchar(255) DEFAULT NULL, `next_level` varchar(255) DEFAULT NULL, `family_group_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000815)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000648)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSurveys (3)
+  [4;35;1mSQL (0.068992)[0m   [0mCREATE TABLE surveys (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `belonging` varchar(255) DEFAULT NULL, `payment_amount` int(11) DEFAULT NULL, `building_material` varchar(255) DEFAULT NULL, `bathroom_belonging` varchar(255) DEFAULT NULL, `hot_water` tinyint(1) DEFAULT NULL, `bedrooms` int(11) DEFAULT NULL, `beds` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000900)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000631)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateFamilyGroups (4)
+  [4;36;1mSQL (0.061150)[0m   [0;1mCREATE TABLE family_groups (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guardian_id` int(11) DEFAULT NULL, `survey_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000760)[0m   [0mUPDATE schema_info SET version = 4[0m
+  [4;36;1mSQL (0.000628)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddPhone (5)
+  [4;35;1mSQL (0.188366)[0m   [0mALTER TABLE adults ADD `phone_number_1` varchar(255)[0m
+  [4;36;1mSQL (0.097586)[0m   [0;1mALTER TABLE adults ADD `phone_number_2` varchar(255)[0m
+  [4;35;1mSQL (0.081452)[0m   [0mALTER TABLE students ADD `phone_number_1` varchar(255)[0m
+  [4;36;1mSQL (0.084194)[0m   [0;1mALTER TABLE students ADD `phone_number_2` varchar(255)[0m
+  [4;35;1mSQL (0.009297)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000674)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddIsGuardianToAdult (6)
+  [4;35;1mSQL (0.087068)[0m   [0mALTER TABLE adults ADD `is_guardian` tinyint(1)[0m
+  [4;36;1mSQL (0.000842)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000692)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateAddresses (7)
+  [4;36;1mSQL (0.067052)[0m   [0;1mCREATE TABLE addresses (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `line1` varchar(255) DEFAULT NULL, `line2` varchar(255) DEFAULT NULL, `comuna` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000878)[0m   [0mUPDATE schema_info SET version = 7[0m
+  [4;36;1mSQL (0.000687)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to DeleteIsGuardian (8)
+  [4;35;1mSQL (0.073231)[0m   [0mALTER TABLE adults DROP `is_guardian`[0m
+  [4;36;1mSQL (0.000914)[0m   [0;1mUPDATE schema_info SET version = 8[0m
+  [4;35;1mSQL (0.000659)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to Add (9)
+  [4;36;1mSQL (0.090683)[0m   [0;1mALTER TABLE addresses ADD `family_group_id` int(11)[0m
+  [4;35;1mSQL (0.000848)[0m   [0mUPDATE schema_info SET version = 9[0m
+  [4;36;1mSQL (0.000654)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddPhoneToAddresses (10)
+  [4;35;1mSQL (0.081634)[0m   [0mALTER TABLE addresses ADD `phone` varchar(255)[0m
+  [4;36;1mSQL (0.001058)[0m   [0;1mUPDATE schema_info SET version = 10[0m
+  [4;35;1mSQL (0.000722)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.013720)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.042891)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.001369)[0m   [0;1mSHOW KEYS FROM addresses[0m
+  [4;35;1mSQL (0.026566)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mSQL (0.001336)[0m   [0;1mSHOW KEYS FROM adults[0m
+  [4;35;1mSQL (0.003230)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mSQL (0.001269)[0m   [0;1mSHOW KEYS FROM family_groups[0m
+  [4;35;1mSQL (0.005662)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.001321)[0m   [0;1mSHOW KEYS FROM students[0m
+  [4;35;1mSQL (0.004633)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSQL (0.001318)[0m   [0;1mSHOW KEYS FROM surveys[0m
