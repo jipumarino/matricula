@@ -17569,3 +17569,190 @@ Rendering family_groups/edit
   [4;35;1mAddress Load (0.000077)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
   [4;36;1mAdult Load (0.000096)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
 Completed in 0.05507 (18 reqs/sec) | Rendering: 0.01862 (33%) | DB: 0.00750 (13%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#edit_address (for 127.0.0.1 at 2007-11-30 11:39:43) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit_address", "id"=>"2", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000175)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mAddress Columns (0.001250)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mAddress Load (0.000119)[0m   [0mSELECT * FROM addresses WHERE (addresses.`id` = 2) [0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mBEGIN[0m
+  [4;35;1mAddress Update (0.000313)[0m   [0mUPDATE addresses SET `phone` = NULL, `family_group_id` = 22, `line2` = '', `comuna` = 'Santiago', `line1` = 'Coquimbo 56, depto 1206' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mCOMMIT[0m
+  [4;35;1mFamilyGroup Columns (0.001042)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000113)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Rendering  within layouts/application
+
+
+ActionController::MissingTemplate (Missing template /home/jipumarino/devel/matr2-externo/app/views/family_groups/edit_address.rhtml):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:1211:in `assert_existence_of_template_file'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:810:in `render_file'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:717:in `render_with_no_layout'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:50:in `render'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:1102:in `perform_action_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:696:in `call_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/rescue.rb:83:in `perform_action'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:435:in `send'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:435:in `process_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/session_management.rb:114:in `process'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:334:in `process'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing FamilyGroupsController#edit_address (for 127.0.0.1 at 2007-11-30 11:41:49) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit_address", "id"=>"2", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000184)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mAddress Columns (0.001101)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mAddress Load (0.000111)[0m   [0mSELECT * FROM addresses WHERE (addresses.`id` = 2) [0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+  [4;35;1mAddress Update (0.000299)[0m   [0mUPDATE addresses SET `phone` = NULL, `family_group_id` = 22, `line2` = '', `comuna` = 'Santiago', `line1` = 'Coquimbo 56, depto 1206' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mCOMMIT[0m
+  [4;35;1mFamilyGroup Columns (0.000799)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000080)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit_address
+Completed in 0.03488 (28 reqs/sec) | Rendering: 0.00493 (14%) | DB: 0.00280 (8%) | 200 OK [http://localhost/family_groups/edit_address/2]
+
+
+Processing FamilyGroupsController#edit_address (for 127.0.0.1 at 2007-11-30 11:41:56) [POST]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"commit"=>"Guardar dirección", "action"=>"edit_address", "id"=>"2", "controller"=>"family_groups", "address"=>{"line1"=>"Coquimbo 56, depto 1206", "line2"=>"asas", "phone"=>"7784664", "comuna"=>"Santiago"}}
+  [4;35;1mSQL (0.000143)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mAddress Columns (0.000773)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mAddress Load (0.000080)[0m   [0mSELECT * FROM addresses WHERE (addresses.`id` = 2) [0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mBEGIN[0m
+  [4;35;1mAddress Update (0.000304)[0m   [0mUPDATE addresses SET `phone` = '7784664', `family_group_id` = 22, `line2` = 'asas', `comuna` = 'Santiago', `line1` = 'Coquimbo 56, depto 1206' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.005241)[0m   [0;1mCOMMIT[0m
+  [4;35;1mFamilyGroup Columns (0.000647)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000075)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000049)[0m   [0mBEGIN[0m
+  [4;36;1mAddress Update (0.000240)[0m   [0;1mUPDATE addresses SET `phone` = '7784664', `family_group_id` = 22, `line2` = 'asas', `comuna` = 'Santiago', `line1` = 'Coquimbo 56, depto 1206' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.000108)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.02850 (35 reqs/sec) | DB: 0.00773 (27%) | 302 Found [http://localhost/family_groups/edit_address/2]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:41:56) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000339)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000656)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000079)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000812)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000105)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000842)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000088)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.000950)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000090)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000094)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000083)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000067)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000077)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAddress Columns (0.000686)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000232)[0m   [0;1mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAddress Load (0.000185)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000106)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.05146 (19 reqs/sec) | Rendering: 0.01836 (35%) | DB: 0.00565 (10%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#add_address (for 127.0.0.1 at 2007-11-30 11:42:39) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"add_address", "id"=>"22", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000173)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mFamilyGroup Columns (0.001072)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000114)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAddress Columns (0.001136)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+Rendering  within layouts/application
+Rendering family_groups/add_address
+Completed in 0.03488 (28 reqs/sec) | Rendering: 0.00803 (23%) | DB: 0.00249 (7%) | 200 OK [http://localhost/family_groups/add_address/22]
+
+
+Processing FamilyGroupsController#add_address (for 127.0.0.1 at 2007-11-30 11:42:45) [POST]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"commit"=>"Guardar dirección", "action"=>"add_address", "id"=>"22", "controller"=>"family_groups", "address"=>{"line1"=>"as", "line2"=>"jkj", "phone"=>"99", "comuna"=>"jja"}}
+  [4;35;1mSQL (0.000182)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mFamilyGroup Columns (0.001088)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000114)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAddress Columns (0.001188)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mSQL (0.000122)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000344)[0m   [0;1mINSERT INTO addresses (`line1`, `line2`, `family_group_id`, `comuna`, `phone`) VALUES('as', 'jkj', 22, 'jja', '99')[0m
+  [4;35;1mSQL (0.005686)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.04040 (24 reqs/sec) | DB: 0.00872 (21%) | 302 Found [http://localhost/family_groups/add_address/22]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:42:45) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000184)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000962)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000124)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001172)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000142)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001337)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000165)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001510)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000134)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000193)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000137)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000110)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000140)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAddress Columns (0.001047)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000338)[0m   [0;1mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAddress Load (0.000319)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000199)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.08388 (11 reqs/sec) | Rendering: 0.03099 (36%) | DB: 0.00857 (10%) | 200 OK [http://localhost/family_groups/edit/22]

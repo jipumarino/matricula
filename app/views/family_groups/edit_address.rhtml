@@ -1,0 +1,27 @@
+<h2>Editar dirección</h2>
+<% form_for :address, @address, :url => {:action => 'edit_address', :id => @address} do |f|%>
+<table>
+  <tr>
+    <td>Dirección</td>
+    <td>
+      <%= f.text_field :line1 %><br />
+      <%= f.text_field :line2 %>
+    </td>
+  </tr>
+  <tr>
+    <td>Teléfono</td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+  <tr>
+    <td>Comuna</td>
+    <td><%= f.text_field :comuna %></td>
+  </tr>
+</table>
+
+<%= submit_tag "Guardar dirección" %>
+
+
+<% end %>
+
+
+
