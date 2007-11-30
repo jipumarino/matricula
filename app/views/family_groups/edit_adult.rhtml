@@ -1,0 +1,81 @@
+<h2>Editar adulto</h2>
+<% form_for :adult, @adult, :url => {:action => 'edit_adult', :id => @adult} do |f|%>
+<table>
+  <tr>
+    <td>RUN</td>
+    <td><%= f.text_field :run %></td>
+  </tr>
+  <tr>
+    <td>Apellido paterno</td>
+    <td><%= f.text_field :fathers_name %></td>
+  </tr>
+  <tr>
+    <td>Apellido materno</td>
+    <td><%= f.text_field :mothers_name %></td>
+  </tr>
+  <tr>
+    <td>Nombres</td>
+    <td><%= f.text_field :names %></td>
+  </tr>
+  <tr>
+      <td>Sexo</td>
+      <td>Masculino<%= f.radio_button :sex, :M %> Femenino<%= f.radio_button :sex, :F %></td>
+  </tr>
+  <tr>
+    <td>Fecha de nacimiento</td>
+    <td><%=f.date_select :birthday, :start_year => 1925, :end_year => 1995 %></td>
+  </tr>
+    <tr>
+    <td>Nivel educacional</td>
+    <td>
+      <table>
+      <tr>
+      <td>Básica</td>
+      <td>
+      <%= f.radio_button :education_level, 'EB12' %> 1&deg;-2&deg;
+      <%= f.radio_button :education_level, 'EB34' %> 3&deg;-4&deg;
+      <%= f.radio_button :education_level, 'EB56' %> 5&deg;-6&deg;
+      <%= f.radio_button :education_level, 'EB78' %> 7&deg;-8&deg;
+      </td>
+      </tr>
+      <tr>
+      <td>Media</td>
+      <td>
+      <%= f.radio_button :education_level, 'EM12' %> 1&deg;-2&deg;
+      <%= f.radio_button :education_level, 'EM34' %> 3&deg;-4&deg;
+      </td>
+      </tr>
+      <tr>
+      <td>Superior</td>
+      <td>
+      <%= f.radio_button :education_level, 'ES12' %> 1&deg;-2&deg;
+      <%= f.radio_button :education_level, 'ES34' %> 3&deg;-4&deg;
+      <%= f.radio_button :education_level, 'ES56' %> 5&deg;-6&deg;
+      </td>
+        </tr>
+      </table>
+    </tr>
+    <tr>
+      <td>Ocupación</td>
+      <td><%= f.text_field :occupation %></td>
+    </tr>
+    <tr>
+      <td>Ingreso</td>
+      <td><%= f.text_field :income %></td>
+    </tr>
+    <tr>
+      <td>Teléfono 1</td>
+      <td><%= f.text_field :phone_number_1 %></td>
+    </tr>
+    <tr>
+      <td>Teléfono 2</td>
+      <td><%= f.text_field :phone_number_2 %></td>
+    </tr>
+</table>
+
+<%= submit_tag "Guardar adulto" %>
+
+
+<% end %>
+
+

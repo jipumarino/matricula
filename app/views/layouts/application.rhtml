@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Colegio San Alberto: Matrícula 2008</title>
+    <%= stylesheet_link_tag 'matricula' %>
+    <link rel="shortcut icon" href="/images/icono.png" /> 
+  </head>
+  <body style="font-family:sans-serif;" >
+
+    <div id="logo" style="position:absolute;" >
+      <img src=/images/logo_san_alberto.png />
+    </div>
+    <div id="title" style="position:absolute;left:240px;top:0px" >
+      <h1>Sistema de Matrícula 2008<font size="-1.5">v1.99.1</font></h1>
+      <hr color="#27049D" width="80%" align="left" size="5px" style="margin-top:-10px" />
+      <hr color="#E00714" width="50%" align="left" size="5px" />
+      <hr color="#FDC000" width="30%" align="left" size="5px" />
+    </div>
+    <div id="main" style="position:absolute;top:100px;" >
+
+
+      <p style="color:green"><%= flash[:notice] %></p>
+
+      <%= yield  %>
+
+
+    </div>
+  </body>
+</html>
+
+
+
+

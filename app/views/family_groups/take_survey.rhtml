@@ -1,0 +1,47 @@
+<h2>Encuesta socioeconómica</h2>
+<% form_for :survey, @survey, :url => {:action => 'take_survey', :id => @fg } do |f| %>
+<table>
+  <tr>
+    <td>Pertenencia de la vivienda</td>
+    <td>
+      Propia <%= f.radio_button  :belonging, 'own' %>
+      Arrendada <%= f.radio_button  :belonging, 'rented' %>
+      Cedida <%= f.radio_button  :belonging, 'yield' %> 
+      Otro <%= f.radio_button  :belonging, 'other' %>
+    </td>
+  </tr>
+  <tr>
+    <td>Monto que se paga</td>
+    <td><%= f.text_field :payment_amount %></td>
+  </tr>
+  <tr>
+    <td>Material de construcción</td>
+    <td><%= f.text_field :building_material %></td>
+  </tr>
+  <tr>
+    <td>Pertenencia del baño</td>
+    <td>
+      Propio <%= f.radio_button  :bathroom_belonging, :own %>
+      Compartido <%= f.radio_button  :bathroom_belonging, :shared %>
+    </td>
+  </tr>
+  <tr>
+    <td>Tiene agua caliente</td>
+    <td>
+      Sí <%= f.radio_button  :hot_water, :true %>
+      No <%= f.radio_button  :hot_water, :false %>
+    </td>
+  </tr>
+  <tr>
+    <td>Cantidad de dormitorios</td>
+    <td><%= f.text_field :bedrooms %></td>
+  </tr>
+  <tr>
+    <td>Cantidad de camas</td>
+    <td><%= f.text_field :beds %></td>
+  </tr>
+</table>
+
+<%= submit_tag 'Guardar encuesta' %>
+
+<% end %>

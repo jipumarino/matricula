@@ -1,0 +1,95 @@
+<hr />
+<h2>Alumnos</h2>
+
+<% unless @students.empty? %>
+<table class="list">
+  <tr>
+    <th>RUN</th>
+    <th>Nombre</th>
+    <th>Curso</th>
+    <th colspan="2">Acciones</th>
+  </tr>
+  <% @students.each do |s| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= s.run %></td>
+    <td><%= s.fullname %></td>
+    <td><%= s.next_level %></td>
+    <td><%= link_to 'Eliminar', {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %></td>
+    <td><%= link_to 'Editar', :action => 'edit_student', :id => s %></td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<%= link_to 'Agregar alumno', :action => 'add_student', :id => @fg %>
+<hr />
+
+<h2>Adultos</h2>
+<% unless @adults.empty? %>
+<table class="list">
+  <tr>
+    <th>RUN</th>
+    <th>Nombre</th>
+    <th colspan="3">Acciones</th>
+  </tr>
+  <% @adults.each do |s| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= s.run %></td>
+    <td><%= s.fullname %></td>
+    <td><%= link_to 'Eliminar', {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %></td>
+    <td><%= link_to 'Editar', :action => 'edit_adult', :id => s %></td>
+    <td><%= (link_to 'Seleccionar como apoderado', :action => 'set_guardian', :id => s) unless s.is_guardian%></td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<%= link_to 'Agregar adulto', :action => 'add_adult', :id => @fg %>
+<hr />
+
+<h2>Encuesta socioeconómica</h2>
+<% if @survey.nil? %>
+<%= link_to 'Responder encuesta', :action => 'take_survey', :id => @fg %>
+<% else %>
+<table class="form">
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Pertenencia de la vivienda</td>
+    <td><%= @survey.belonging %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Monto que se paga</td>
+    <td><%= @survey.payment_amount %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Material de construcción</td>
+    <td><%= @survey.building_material %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Pertenencia del baño</td>
+    <td><%= @survey.bathroom_belonging %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Agua caliente</td>
+    <td><%= @survey.hot_water %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Cantidad de dormitorios</td>
+   <td><%= @survey.bedrooms %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Cantidad de camas</td>
+    <td><%= @survey.beds %></td>
+  </tr>
+</table>
+<%= link_to 'Editar encuesta', :action => 'edit_survey', :id => @fg %>
+<% end %>
+
+<hr />
+<h2>Compromiso de pago</h2>
+<% if @fg.has_guardian? and @fg.has_survey? %>
+<%= link_to 'Imprimir compromiso', {:action => 'print_ticket', :id => @fg}, :popup => true %>
+<% else %>
+Para imprimir el compromiso de pago se debe haber contestado la encuesta socioeconómica y definir un apoderado.
+<% end %>
+<br />
+<br />
+
+<%= link_to 'Finalizar edición de grupo familiar', :action => 'index' %>

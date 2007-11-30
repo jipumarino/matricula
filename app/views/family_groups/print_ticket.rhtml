@@ -1,0 +1,95 @@
+<body onLoad="window.print();" >
+<table>
+  <tr>
+    <td>
+      <img src=/images/logo_san_alberto_bn.png />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br />
+      <center><h2>Declaraci&oacute;n Jurada de Ingresos y Compromiso de Pago</h2></center>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <br />
+      <p>Yo, <%= @guardian.names %> <%= @guardian.fathers_name %> <%= @guardian.mothers_name %>, R.U.T. <%= @guardian.run %>, apoderado de los menores
+      <ul>
+        <% @fg.students.each do |s| %>
+        <li> <%=h s.names %> <%=h s.fathers_name %> <%=h s.mothers_name %>, R.U.N. <%=h s.run %>, a matricularse en <%= grade_format(s.next_level) %></li> 
+        <% end %>
+</ul>
+      declaro que:</p>
+
+      <ol>
+        <li>
+        Los que aportan sost&eacute;n econ&oacute;mico a estos menores, de acuerdo a los documentos entregados, son
+        <br />
+        <ul>
+          <% @adults.each do |c| %>
+          <li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %>.-</li>
+          <% end %>
+        </ul>
+        <br />
+        <p>Por lo tanto, los ingresos totales de mi familia, es decir, la <em>suma de los ingresos de todos los miembros del grupo familiar</em>, son de <%= dinero @total_income %>.-</p>
+        </li>
+
+        <li>
+        Estoy en conocimiento de que la no presentaci&oacute;n de los documentos que acreditan estos ingresos implica que el pago por cada alumno matriculado corresponder&aacute; al m&aacute;ximo, teniendo como &uacute;ltimo plazo para revertir esta situaci&oacute;n el vencimiento de la primera cuota, es decir, el 30 de marzo de 2008.
+        <br />
+        <br />
+        </li>
+
+        <li>
+        Con mi firma ratifico que
+        <ol type="a">
+          <li> Lo declarado anteriormente es verdad. </li>
+          <li> Me comprometo a pagar mensualmente la cuota que se indica m&aacute;s abajo. </li>
+          <li> Estoy en conocimiento de que en el sector existen otros colegios gratuitos. </li>
+          <li> Se me ha hecho llegar por escrito el reglamento del colegio que regula los pagos y las posibles becas. En particular, <b>s&eacute; que no pagar mensualmente
+            es una falta grave.</b> </li>
+          <li> Colaborar&eacute; con la asistente social en caso de ser requerida m&aacute;s informaci&oacute;n o documentaci&oacute;n. </li>
+        </ol>
+        <br />
+        </li>
+
+        <li>
+        <b>Estoy en conocimiento de que la cuota mensual a partir de marzo de 2008 ser&aacute; de <%= dinero @mensuality %>.-</b>, correspondiente a
+        
+        <% if @students_basic > 0 %>
+        <%= @students_basic %> estudiante<%= "s" if @students_basic > 1 %> en enseñanza básica<% if @students_media > 0 and @students_basic > 0 %>
+(<%= dinero @mensuality_basic %>.-)
+<% end %>
+        <% end %>
+        
+        <%= " y " if @students_media > 0 and @students_basic > 0 %>
+        
+        <% if @students_media > 0 %>
+        <%= @students_media %> estudiante<%= "s" if @students_media > 1 %> en enseñanza media 
+<% if @students_media > 0 and @students_basic > 0 %>
+(<%= dinero @mensuality_media %>.-)
+<% end %>
+
+        <% end %>
+
+<%= "." if not @students_media > 0 and @students_basic > 0 -%>
+
+
+        </li>
+
+      </ol>
+
+    </td>
+  </tr>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div style="float:right"><center>______________________________________<br /><%= @guardian.names + " " + @guardian.fathers_name + " " + @guardian.mothers_name %><br />R.U.T. <%=   @guardian.run %></center></div>
+
+

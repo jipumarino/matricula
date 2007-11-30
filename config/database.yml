@@ -14,9 +14,9 @@
 development:
   adapter: mysql
   database: matricula2_development
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: matricula2
+  password: matricula2
+  host: localhost
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
@@ -24,13 +24,13 @@ development:
 test:
   adapter: mysql
   database: matricula2_test
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: matricula2
+  password: matricula2
+  host: localhost
 
 production:
   adapter: mysql
-  database: matricula2_production
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
+  database: matricula2
+  username: matricula2
+  password: matricula2
+  host: localhost

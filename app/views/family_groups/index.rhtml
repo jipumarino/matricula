@@ -1,0 +1,46 @@
+<td><% form_tag :action => 'find_person' do %>
+  <%= text_field_tag :search_criteria %>
+  <%= submit_tag 'Buscar persona' %>
+  <% end %>
+  <% unless @students.nil? or @students.empty? %>
+  <h3>Alumnos</h3>
+<table>
+  <tr>
+    <th>RUN</th>
+    <th>Nombre</th>
+    <th>Curso</th>
+    <th>Acciones</th>
+  </tr>
+  <% @students.each do |s| %>
+  <tr>
+    <td><%= s.run %></td>
+    <td><%= s.fullname %></td>
+    <td><%= s.next_level %></td>
+    <td>
+      <%= link_to 'Editar grupo familiar', :action => 'edit', :id => s.family_group %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+
+<% unless @adults.nil? or @adults.empty? %>
+<h3>Adultos</h3>
+<table>
+  <tr>
+    <th>RUN</th>
+    <th>Nombre</th>
+    <th>Acciones</th>
+  </tr>
+  <% @adults.each do |a| %>
+  <tr>
+    <td><%= a.run %></td>
+    <td><%= a.fullname %></td>
+    <td>
+      <%= link_to 'Editar grupo familiar', :action => 'edit', :id => a.family_group %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<%= link_to "Crear nuevo grupo familiar", :action => 'create' %>
