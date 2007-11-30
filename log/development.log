@@ -17215,3 +17215,357 @@ Rendering family_groups/edit
   [4;36;1mAdult Load (0.000087)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
   [4;35;1mAdult Load (0.000118)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
 Completed in 0.05125 (19 reqs/sec) | Rendering: 0.01574 (30%) | DB: 0.00619 (12%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#print_ticket (for 127.0.0.1 at 2007-11-30 11:31:31) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"print_ticket", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000720)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000981)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000309)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mAdult Columns (0.001507)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000223)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mStudent Load (0.000115)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mStudent Columns (0.000966)[0m   [0;1mSHOW FIELDS FROM students[0m
+  [4;35;1mAdult Load (0.000265)[0m   [0mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+Rendering family_groups/print_ticket
+Completed in 0.04975 (20 reqs/sec) | Rendering: 0.00864 (17%) | DB: 0.00509 (10%) | 200 OK [http://localhost/family_groups/print_ticket/22]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:34:31) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000157)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000957)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000109)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000833)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000087)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000951)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000090)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.000993)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000090)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000082)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000088)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Load (0.000075)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000087)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mAdult Load (0.000094)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+Completed in 0.12525 (7 reqs/sec) | Rendering: 0.02230 (17%) | DB: 0.00485 (3%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:34:38) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000164)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000960)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000106)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001189)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000122)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001448)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000122)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001448)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000128)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000125)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000120)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Load (0.000106)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000121)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mAdult Load (0.000132)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+Completed in 0.08842 (11 reqs/sec) | Rendering: 0.03596 (40%) | DB: 0.00654 (7%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:34:42) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"6", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000179)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAdult Columns (0.001491)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000131)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Columns (0.000647)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000079)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000069)[0m   [0mBEGIN[0m
+  [4;36;1mFamilyGroup Update (0.000236)[0m   [0;1mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 6 WHERE `id` = 22[0m
+  [4;35;1mSQL (0.038197)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.06769 (14 reqs/sec) | DB: 0.04103 (60%) | 302 Found [http://localhost/family_groups/set_guardian/6]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:34:42) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000181)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000714)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000243)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000812)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000080)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000907)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000094)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001157)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000117)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000082)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000088)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000075)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000087)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAdult Load (0.000094)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.13539 (7 reqs/sec) | Rendering: 0.01667 (12%) | DB: 0.00491 (3%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:36:53) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000173)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000671)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000078)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000800)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000087)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000931)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000087)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.000943)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000088)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000469)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000278)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000099)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000088)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAddress Columns (0.000714)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAddress Load (0.000080)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000091)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.06426 (15 reqs/sec) | Rendering: 0.02605 (40%) | DB: 0.00591 (9%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:37:15) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000171)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mFamilyGroup Columns (0.001091)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000122)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mSurvey Columns (0.000910)[0m   [0;1mSHOW FIELDS FROM surveys[0m
+  [4;35;1mSurvey Load (0.000086)[0m   [0mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;36;1mStudent Columns (0.001151)[0m   [0;1mSHOW FIELDS FROM students[0m
+  [4;35;1mSQL (0.000119)[0m   [0mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mStudent Load (0.000094)[0m   [0;1mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mAdult Columns (0.001122)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mAdult Load (0.000090)[0m   [0mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mFamilyGroup Load (0.000087)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mAdult Load (0.000084)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;36;1mFamilyGroup Load (0.000076)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mAdult Load (0.000082)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;36;1mAddress Columns (0.000792)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mSQL (0.000089)[0m   [0mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAddress Load (0.012278)[0m   [0;1mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAdult Load (0.000167)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.13825 (7 reqs/sec) | Rendering: 0.07760 (56%) | DB: 0.01870 (13%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:37:19) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"4", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000181)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAdult Columns (0.001608)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mAdult Load (0.000135)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Columns (0.000901)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000105)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSQL (0.000085)[0m   [0mBEGIN[0m
+  [4;36;1mFamilyGroup Update (0.000374)[0m   [0;1mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 4 WHERE `id` = 22[0m
+  [4;35;1mSQL (0.010248)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.04531 (22 reqs/sec) | DB: 0.01364 (30%) | 302 Found [http://localhost/family_groups/set_guardian/4]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:37:19) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000193)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000912)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000291)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.001319)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000121)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.001298)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000119)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.001592)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000133)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000098)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000121)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mFamilyGroup Load (0.000103)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000119)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+  [4;35;1mAddress Columns (0.001024)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAddress Load (0.000107)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000156)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 4) [0m
+Completed in 0.08151 (12 reqs/sec) | Rendering: 0.02939 (36%) | DB: 0.00804 (9%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#set_guardian (for 127.0.0.1 at 2007-11-30 11:37:22) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"set_guardian", "id"=>"6", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000183)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mAdult Columns (0.001527)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mAdult Load (0.000148)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;36;1mFamilyGroup Columns (0.000900)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000103)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mFamilyGroup Update (0.000334)[0m   [0mUPDATE family_groups SET `survey_id` = 6, `guardian_id` = 6 WHERE `id` = 22[0m
+  [4;36;1mSQL (0.005194)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/family_groups/edit/22
+Completed in 0.03837 (26 reqs/sec) | DB: 0.00848 (22%) | 302 Found [http://localhost/family_groups/set_guardian/6]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:37:22) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;35;1mSQL (0.000148)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mFamilyGroup Columns (0.000666)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000229)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mSurvey Columns (0.000817)[0m   [0;1mSHOW FIELDS FROM surveys[0m
+  [4;35;1mSurvey Load (0.000088)[0m   [0mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;36;1mStudent Columns (0.000847)[0m   [0;1mSHOW FIELDS FROM students[0m
+  [4;35;1mSQL (0.000220)[0m   [0mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mStudent Load (0.000089)[0m   [0;1mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mAdult Columns (0.000981)[0m   [0mSHOW FIELDS FROM adults[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mAdult Load (0.000090)[0m   [0mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mFamilyGroup Load (0.000094)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mAdult Load (0.000089)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;36;1mFamilyGroup Load (0.000074)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mAdult Load (0.000086)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;36;1mAddress Columns (0.000680)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAddress Load (0.000064)[0m   [0;1mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAdult Load (0.000111)[0m   [0mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.05325 (18 reqs/sec) | Rendering: 0.01875 (35%) | DB: 0.00552 (10%) | 200 OK [http://localhost/family_groups/edit/22]
+
+
+Processing FamilyGroupsController#edit_address (for 127.0.0.1 at 2007-11-30 11:37:28) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit_address", "id"=>"2", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000183)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mAddress Columns (0.000731)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mAddress Load (0.000064)[0m   [0;1mSELECT * FROM addresses WHERE (addresses.`id` = 2) [0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mAddress Update (0.000223)[0m   [0;1mUPDATE addresses SET `phone` = NULL, `family_group_id` = 22, `line2` = '', `comuna` = 'Santiago', `line1` = 'Coquimbo 56, depto 1206' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.000107)[0m   [0mCOMMIT[0m
+  [4;36;1mFamilyGroup Columns (0.000624)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000078)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Rendering  within layouts/application
+
+
+ActionController::MissingTemplate (Missing template /home/jipumarino/devel/matr2-externo/app/views/family_groups/edit_address.rhtml):
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:1211:in `assert_existence_of_template_file'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:810:in `render_file'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:717:in `render_with_no_layout'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:50:in `render'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:1102:in `perform_action_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:696:in `call_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/rescue.rb:83:in `perform_action'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:435:in `send'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:435:in `process_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/session_management.rb:114:in `process'
+    /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/base.rb:334:in `process'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /var/lib/gems/1.8/gems/rails-1.2.5/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /var/lib/gems/1.8/gems/actionpack-1.13.5/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing FamilyGroupsController#find_person (for 127.0.0.1 at 2007-11-30 11:37:48) [POST]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"commit"=>"Buscar persona", "search_criteria"=>"bad", "action"=>"find_person", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.000128)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mStudent Load (0.000130)[0m   [0mSELECT * FROM students WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+  [4;36;1mAdult Load (0.000117)[0m   [0;1mSELECT * FROM adults WHERE (concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', 'bad', '%')) ORDER BY fathers_name, mothers_name[0m
+Rendering actionindexlayoutfalse within layouts/application
+Rendering family_groups/index
+  [4;35;1mStudent Columns (0.001052)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mFamilyGroup Columns (0.000718)[0m   [0;1mSHOW FIELDS FROM family_groups[0m
+  [4;35;1mFamilyGroup Load (0.000073)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+Completed in 0.02825 (35 reqs/sec) | Rendering: 0.01469 (51%) | DB: 0.00222 (7%) | 200 OK [http://localhost/family_groups/find_person]
+
+
+Processing FamilyGroupsController#edit (for 127.0.0.1 at 2007-11-30 11:37:49) [GET]
+  Session ID: 3ce6b6493177638f21e7cc542b0b2543
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"family_groups"}
+  [4;36;1mSQL (0.002524)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mFamilyGroup Columns (0.000648)[0m   [0mSHOW FIELDS FROM family_groups[0m
+  [4;36;1mFamilyGroup Load (0.000060)[0m   [0;1mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;35;1mSurvey Columns (0.000815)[0m   [0mSHOW FIELDS FROM surveys[0m
+  [4;36;1mSurvey Load (0.000083)[0m   [0;1mSELECT * FROM surveys WHERE (surveys.`id` = 6) [0m
+Rendering  within layouts/application
+Rendering family_groups/edit
+  [4;35;1mStudent Columns (0.000847)[0m   [0mSHOW FIELDS FROM students[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT count(*) AS count_all FROM students WHERE (students.family_group_id = 22) [0m
+  [4;35;1mStudent Load (0.000086)[0m   [0mSELECT * FROM students WHERE (students.family_group_id = 22) [0m
+  [4;36;1mAdult Columns (0.000943)[0m   [0;1mSHOW FIELDS FROM adults[0m
+  [4;35;1mSQL (0.000077)[0m   [0mSELECT count(*) AS count_all FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000090)[0m   [0;1mSELECT * FROM adults WHERE (adults.family_group_id = 22) [0m
+  [4;35;1mFamilyGroup Load (0.000081)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000084)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mFamilyGroup Load (0.000060)[0m   [0mSELECT * FROM family_groups WHERE (family_groups.`id` = 22) [0m
+  [4;36;1mAdult Load (0.000090)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+  [4;35;1mAddress Columns (0.000681)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSELECT count(*) AS count_all FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;35;1mAddress Load (0.000077)[0m   [0mSELECT * FROM addresses WHERE (addresses.family_group_id = 22) [0m
+  [4;36;1mAdult Load (0.000096)[0m   [0;1mSELECT * FROM adults WHERE (adults.`id` = 6) [0m
+Completed in 0.05507 (18 reqs/sec) | Rendering: 0.01862 (33%) | DB: 0.00750 (13%) | 200 OK [http://localhost/family_groups/edit/22]

@@ -7,15 +7,17 @@
     <th>RUN</th>
     <th>Nombre</th>
     <th>Curso</th>
-    <th colspan="2">Acciones</th>
+    <th>Acciones</th>
   </tr>
   <% @students.each do |s| %>
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td><%= s.run %></td>
     <td><%= s.fullname %></td>
     <td><%= s.next_level %></td>
-    <td><%= link_to 'Eliminar', {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %></td>
-    <td><%= link_to 'Editar', :action => 'edit_student', :id => s %></td>
+    <td>
+      <%= link_to 'Editar', :action => 'edit_student', :id => s %>
+      <%= link_to 'Eliminar', {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>
+    </td>
   </tr>
   <% end %>
 </table>
@@ -29,20 +31,49 @@
   <tr>
     <th>RUN</th>
     <th>Nombre</th>
-    <th colspan="3">Acciones</th>
+    <th>Acciones</th>
   </tr>
   <% @adults.each do |s| %>
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td><%= s.run %></td>
     <td><%= s.fullname %></td>
-    <td><%= link_to 'Eliminar', {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %></td>
-    <td><%= link_to 'Editar', :action => 'edit_adult', :id => s %></td>
-    <td><%= (link_to 'Seleccionar como apoderado', :action => 'set_guardian', :id => s) unless s.is_guardian%></td>
+    <td>
+      <%= link_to 'Editar', :action => 'edit_adult', :id => s %>
+      <%= (link_to 'Seleccionar como apoderado', :action => 'set_guardian', :id => s) unless s.is_guardian%>
+      <%= link_to 'Eliminar', {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+    </td>
   </tr>
   <% end %>
 </table>
 <% end %>
 <%= link_to 'Agregar adulto', :action => 'add_adult', :id => @fg %>
+<hr />
+
+<h2>Direcciones</h2>
+<% unless @addresses.empty? %>
+<table class="list">
+  <tr>
+    <th>Dirección</th>
+    <th>Teléfono</th>
+    <th>Comuna</th>
+    <th>Acciones</th>
+  </tr>
+  <% @addresses.each do |a| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= a.line1+"<br />"+a.line2 %></td>
+    <td><%= a.phone %></td>
+    <td><%= a.comuna %></td>
+    <td>
+      <%= link_to 'Editar', :action => 'edit_address', :id => a %>
+      <%= link_to 'Eliminar', {:action => 'delete_address', :id => a}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<%= link_to 'Agregar dirección', :action => 'add_address', :id => @fg %>
+
+
 <hr />
 
 <h2>Encuesta socioeconómica</h2>
