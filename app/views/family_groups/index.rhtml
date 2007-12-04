@@ -20,7 +20,7 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
     <td><%= s.fullname %></td>
     <td><%= s.next_level %></td>
     <td>
-      <%= link_to 'Editar grupo familiar', :action => 'edit', :id => s.family_group %>
+      <%= link_to image_tag('edit_family_group', :title=>'Editar grupo familiar'), :action => 'edit', :id => s.family_group %>
     </td>
   </tr>
   <% end %>
@@ -40,7 +40,7 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
     <td><%= a.run %></td>
     <td><%= a.fullname %></td>
     <td>
-      <%= link_to 'Editar grupo familiar', :action => 'edit', :id => a.family_group %>
+      <%= link_to image_tag('edit_family_group', :title => 'Editar grupo familiar'), :action => 'edit', :id => a.family_group %>
     </td>
   </tr>
   <% end %>
