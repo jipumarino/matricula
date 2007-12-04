@@ -14,10 +14,10 @@
   <tr>
     <td colspan="2">
       <br />
-      <p>Yo, <%= @guardian.names %> <%= @guardian.fathers_name %> <%= @guardian.mothers_name %>, R.U.T. <%= @guardian.run %>, apoderado de los menores
+      <p>Yo, <%= @guardian.names %> <%= @guardian.fathers_name %> <%= @guardian.mothers_name %>, R.U.T. <%= run @guardian.run %>, apoderado de los menores
       <ul>
         <% @fg.students.each do |s| %>
-        <li> <%=h s.names %> <%=h s.fathers_name %> <%=h s.mothers_name %>, R.U.N. <%=h s.run %>, a matricularse en <%= grade_format(s.next_level) %></li> 
+        <li> <%=h s.names %> <%=h s.fathers_name %> <%=h s.mothers_name %>, R.U.N. <%=run s.run %>, a matricularse en <%= grade_format(s.next_level) %></li> 
         <% end %>
 </ul>
       declaro que:</p>
@@ -87,6 +87,6 @@
 <br />
 
 
-<div style="float:right"><center>______________________________________<br /><%= @guardian.names + " " + @guardian.fathers_name + " " + @guardian.mothers_name %><br />R.U.T. <%=   @guardian.run %></center></div>
+<div style="float:right"><center>______________________________________<br /><%= @guardian.names + " " + @guardian.fathers_name + " " + @guardian.mothers_name %><br />R.U.T. <%= run @guardian.run %></center></div>
 
 
