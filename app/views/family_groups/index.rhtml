@@ -21,6 +21,7 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
     <td><%= s.next_level %></td>
     <td>
       <%= link_to image_tag('edit_family_group', :title=>'Editar grupo familiar'), :action => 'edit', :id => s.family_group %>
+      <!-- <%= link_to image_tag('delete_family_group', :title=>'Eliminar grupo familiar'), {:action => 'delete', :id => s.family_group}, :confirm => '¿Está seguro que desea eliminar este GRUPO FAMILIAR, con todos sus adultos, alumnos y direcciones asociadas?' %> -->
     </td>
   </tr>
   <% end %>
@@ -41,6 +42,7 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
     <td><%= a.fullname %></td>
     <td>
       <%= link_to image_tag('edit_family_group', :title => 'Editar grupo familiar'), :action => 'edit', :id => a.family_group %>
+      <!--      <%= link_to image_tag('delete_family_group', :title=>'Eliminar grupo familiar'), {:action => 'delete', :id => a.family_group}, :confirm => '¿Está seguro que desea eliminar este GRUPO FAMILIAR, con todos sus adultos, alumnos y direcciones asociadas?' %> -->
     </td>
   </tr>
   <% end %>

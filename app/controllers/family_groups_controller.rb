@@ -9,12 +9,20 @@ class FamilyGroupsController < ApplicationController
   end
 
   def index
+    @students = Student.find_by_name(session[:search_criteria])
+    @adults = Adult.find_by_name(session[:search_criteria])
   end
 
   def create
     @fg = FamilyGroup.new
     @fg.save
     redirect_to :action => 'edit', :id => @fg
+  end
+
+  def delete
+    @fg = FamilyGroup.find(params[:id])
+    @fg.destroy
+    redirect_to :action => :index 
   end
 
   def set_guardian
@@ -128,8 +136,9 @@ class FamilyGroupsController < ApplicationController
   end
 
   def find_person
-    @students = Student.find_by_name(params[:search_criteria])
-    @adults = Adult.find_by_name(params[:search_criteria])
+    session[:search_criteria] = params[:search_criteria]
+    @students = Student.find_by_name(session[:search_criteria])
+    @adults = Adult.find_by_name(session[:search_criteria])
     render :action => 'index'
   end
 
