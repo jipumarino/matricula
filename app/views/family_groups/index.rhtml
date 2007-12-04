@@ -1,6 +1,9 @@
-<td><% form_tag :action => 'find_person' do %>
+<hr />
+<h2>Editar grupo familiar</h2>
+Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante y haga clic en buscar.
+<% form_tag :action => 'find_person' do %>
   <%= text_field_tag :search_criteria %>
-  <%= submit_tag 'Buscar persona' %>
+  <%= submit_tag 'Buscar' %>
   <% end %>
   <% unless @students.nil? or @students.empty? %>
   <h3>Alumnos</h3>
@@ -43,4 +46,6 @@
   <% end %>
 </table>
 <% end %>
+<hr />
+<h2>Crear grupo familiar</h2>
 <%= link_to "Crear nuevo grupo familiar", :action => 'create' %>

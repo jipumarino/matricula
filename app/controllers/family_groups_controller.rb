@@ -86,6 +86,10 @@ class FamilyGroupsController < ApplicationController
     @adult.family_group = @fg
     if request.post?
       if @adult.save
+        if @fg.adults.size == 1
+          @fg.guardian = @adult
+          @fg.save
+        end
         redirect_to :action => :edit, :id => @fg
       end
     end

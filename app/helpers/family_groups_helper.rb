@@ -7,4 +7,7 @@ module FamilyGroupsHelper
     number_to_currency(num, :precision => 0, :unit => "$", :separator => ",", :delimiter => ".")
   end
 
+  def run(run)
+    number_with_delimiter(run.chop, ".")+run.last
+  end
 end
