@@ -9,8 +9,6 @@ class FamilyGroupsController < ApplicationController
   end
 
   def index
-    @students = Student.find_by_name(session[:search_criteria])
-    @adults = Adult.find_by_name(session[:search_criteria])
   end
 
   def create
@@ -135,13 +133,19 @@ class FamilyGroupsController < ApplicationController
     redirect_to :action => 'index'
   end
 
-  def find_person
-    session[:search_criteria] = params[:search_criteria]
-    @students = Student.find_by_name(session[:search_criteria])
-    @adults = Adult.find_by_name(session[:search_criteria])
-    render :action => 'index'
-  end
 
+  def find_person
+    if request.xhr?
+      if params[:search_criteria].strip.length > 0
+        @students = Student.find_by_name(params[:search_criteria])
+        @adults = Adult.find_by_name(params[:search_criteria])
+      end     
+      render :partial => "search_list" 
+    else    
+      redirect_to :action => "index" 
+    end
+  end
+  
   def delete_address
     a = Address.find(params[:id])
     fg = a.family_group
