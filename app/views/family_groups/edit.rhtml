@@ -15,8 +15,8 @@
     <td><%= s.fullname %></td>
     <td><%= s.next_level %></td>
     <td>
-      <%= link_to image_tag('edit', :title => 'Editar'), :action => 'edit_student', :id => s %>
-      <%= link_to image_tag('delete', :title => 'Eliminar'), {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>
+      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_student', :id => s %>
+      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>
     </td>
   </tr>
   <% end %>
@@ -42,9 +42,9 @@
     <td><%= dinero s.income %></td>
     <td><%= s.is_guardian? ? 'Sí':'No' %></td>
     <td>
-      <%= link_to image_tag('edit', :title => 'Editar'), :action => 'edit_adult', :id => s %>
-      <%= (link_to image_tag('set_guardian', :title => 'Seleccionar como apoderado'), :action => 'set_guardian', :id => s) unless s.is_guardian%>
-      <%= link_to image_tag('delete', :title => 'Eliminar'), {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_adult', :id => s %>
+      <%= (link_to image_tag('set_guardian.png', :title => 'Seleccionar como apoderado'), :action => 'set_guardian', :id => s) unless s.is_guardian%>
+      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
     </td>
   </tr>
   <% end %>
@@ -68,8 +68,8 @@
     <td><%= a.phone %></td>
     <td><%= a.comuna %></td>
     <td>
-      <%= link_to image_tag('edit', :title => 'Editar'), :action => 'edit_address', :id => a %>
-      <%= link_to image_tag('delete', :title => 'Eliminar'), {:action => 'delete_address', :id => a}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_address', :id => a %>
+      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_address', :id => a}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
     </td>
   </tr>
   <% end %>

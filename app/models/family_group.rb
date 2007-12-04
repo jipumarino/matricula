@@ -18,7 +18,7 @@ class FamilyGroup < ActiveRecord::Base
   end
   
   def students_basic
-    students.select{|s| s.next_level =~ /.B/}.size
+    students.select{|s| s.next_level =~ /.B/ or s.next_level == "K"}.size
   end
   
   def total_income
