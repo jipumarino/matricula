@@ -3,7 +3,11 @@ class Student < ActiveRecord::Base
   belongs_to  :father, :class_name => "Adult", :foreign_key => "father_id"
   belongs_to  :mother, :class_name => "Adult", :foreign_key => "mother_id"
 
-  before_validation :format_rut
+  before_validation :format_run
+
+  validates_presence_of :fathers_name, :mothers_name, :names, :sex, :next_level
+
+  validates_inclusion_of :sex, :in => %w{M F}
 
   def fullname
     fathers_name+" "+mothers_name+", "+names
@@ -13,7 +17,7 @@ class Student < ActiveRecord::Base
     find(:all, :conditions => ["concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', ?, '%')", criteria], :order =>  'fathers_name, mothers_name') unless criteria.nil? or criteria.empty?
   end
 
-  def format_rut
+  def format_run
     self.run.gsub!(/[.]/,'')
   end
     

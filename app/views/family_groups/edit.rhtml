@@ -13,7 +13,7 @@
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td><%= run s.run %></td>
     <td><%= s.fullname %></td>
-    <td><%= s.next_level %></td>
+    <td><%= grade_format s.next_level %></td>
     <td>
       <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_student', :id => s %>
       <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>

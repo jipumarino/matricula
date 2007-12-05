@@ -1,65 +1,6 @@
 <h2>Editar alumno</h2>
 <% form_for :student, @student, :url => {:action => 'edit_student', :id => @student} do |f|%>
-<table>
-  <tr>
-    <td>RUN</td>
-    <td><%= f.text_field :run %></td>
-  </tr>
-  <tr>
-    <td>Apellido paterno</td>
-    <td><%= f.text_field :fathers_name %></td>
-  </tr>
-  <tr>
-    <td>Apellido materno</td>
-    <td><%= f.text_field :mothers_name %></td>
-  </tr>
-  <tr>
-    <td>Nombres</td>
-    <td><%= f.text_field :names %></td>
-  </tr>
-  <tr>
-      <td>Sexo</td>
-      <td>Masculino<%= f.radio_button :sex, :M %> Femenino<%= f.radio_button :sex, :F %></td>
-  </tr>
-  <tr>
-    <td>Fecha de nacimiento</td>
-    <td><%=f.date_select :birthday, :start_year => 1985, :end_year => 2006 %></td>
-  </tr>
-  <tr>
-    <td>Curso al que se matricula</td>
-    <td>
-      <table>
-        <tr>
-          <td>Pre-Básica</td>
-          <td>
-            <%= f.radio_button :next_level, "PK" %> Pre-Kinder
-            <%= f.radio_button :next_level, "K" %> Kinder
-          </td>
-        </tr>
-        <tr>
-          <td>Básica</td>
-          <td>
-            <% (1..8).each do |i| %>
-            <%= f.radio_button :next_level, String(i)+"B" %> <%= i %>&deg; 
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td>Media</td>
-          <td>
-            <% (1..4).each do |i| %>
-            <%= f.radio_button :next_level, String(i)+"M" %> <%= i %>&deg; 
-            <% end %>
-          </td>
-        </tr>
-      </table>
-      <%= error_message_on :student, :next_level %>
-    </td>
-  </tr>
-
-
-</table>
-
+<%= render :partial => 'student', :object => f %>
 <%= submit_tag "Guardar alumno" %>
 <% end %>
 <%= button_to "Cancelar edición", {:action => 'edit', :id => @fg} %>

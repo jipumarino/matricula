@@ -1,0 +1,46 @@
+<table>
+  <tr>
+    <td>RUN</td>
+    <td><%= adult.text_field :run %></td>
+  </tr>
+  <tr>
+    <td>Apellido paterno</td>
+    <td><%= adult.text_field :fathers_name %></td>
+  </tr>
+  <tr>
+    <td>Apellido materno</td>
+    <td><%= adult.text_field :mothers_name %></td>
+  </tr>
+  <tr>
+    <td>Nombres</td>
+    <td><%= adult.text_field :names %></td>
+  </tr>
+  <tr>
+      <td>Sexo</td>
+      <td>Masculino<%= adult.radio_button :sex, :M %> Femenino<%= adult.radio_button :sex, :F %></td>
+  </tr>
+  <tr>
+    <td>Fecha de nacimiento</td>
+    <td><%=adult.date_select :birthday, :start_year => 1905, :end_year => 1995 %></td>
+  </tr>
+  <tr>
+    <td>Nivel educacional</td>
+    <td><%= adult.select :education_level, educational_levels_choices, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td>Ocupación</td>
+    <td><%= adult.text_field :occupation %></td>
+  </tr>
+  <tr>
+    <td>Ingreso</td>
+    <td><%= adult.text_field :income %></td>
+  </tr>
+  <tr>
+    <td>Teléfono 1</td>
+    <td><%= adult.text_field :phone_number_1 %></td>
+  </tr>
+  <tr>
+    <td>Teléfono 2</td>
+    <td><%= adult.text_field :phone_number_2 %></td>
+  </tr>
+</table>

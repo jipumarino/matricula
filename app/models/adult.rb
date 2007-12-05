@@ -3,6 +3,12 @@ class Adult < ActiveRecord::Base
 
   before_validation :set_income, :format_rut
 
+  validates_presence_of :fathers_name, :mothers_name, :names, :sex
+
+  validates_inclusion_of :sex, :in => %w{M F}
+  
+  validates_numericality_of :income
+
   def fullname
     fathers_name+" "+mothers_name+", "+names
   end
