@@ -16,11 +16,11 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
 
 <%= observe_field 'search_criteria',
 :frequency => 0.5, 
-:update => 'results',
+:update => :results,
 :url => { :controller => 'family_groups', :action=> 'find_person' },
-:with => "'search_criteria=' + escape(value)",
-:loading => "document.getElementById('spinner').style.display='inline'",
-:loaded => "document.getElementById('spinner').style.display='none'" %>
+:with => :search_criteria,
+:loading => "Element.show('spinner')",
+:loaded => "Element.hide('spinner')" %>
 
 <%= render :partial => 'search_list' %>
 
