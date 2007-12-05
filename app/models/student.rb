@@ -14,7 +14,11 @@ class Student < ActiveRecord::Base
   end
 
   def self.find_by_name(criteria)
-    find(:all, :conditions => ["concat(names, ' ', fathers_name, ' ', mothers_name, ' ', run) like concat('%', ?, '%')", criteria], :order =>  'fathers_name, mothers_name') unless criteria.nil? or criteria.empty?
+    terms = criteria.split.collect do |word|
+      "%#{word.downcase}%" 
+    end
+    find(:all,
+         :conditions => [ ( ["(concat(names, ' ', fathers_name, ' ', mothers_name) LIKE ?)"] * terms.size ).join(" AND "), * terms.flatten ])
   end
 
   def format_run
