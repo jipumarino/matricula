@@ -1,0 +1,36 @@
+<table>
+  <tr>
+    <td>Pertenencia de la vivienda</td>
+    <td><%= survey.select :belonging, [['Propia', 'own'],['Arrendada', 'rented'], ['Cedida', 'yield'], ['Otro', 'other']], :include_blank => true %> </td>
+  </tr>
+  <tr>
+    <td>Monto que se paga mensualmente por la vivienda</td>
+    <td><%= survey.text_field :payment_amount %></td>
+  </tr>
+  <tr>
+    <td>Material de construcción</td>
+    <td><%= survey.text_field :building_material %></td>
+  </tr>
+  <tr>
+    <td>Pertenencia del baño</td>
+    <td>
+      Propio <%= survey.radio_button  :bathroom_belonging, :own %>
+      Compartido <%= survey.radio_button  :bathroom_belonging, :shared %>
+    </td>
+  </tr>
+  <tr>
+    <td>Tiene agua caliente</td>
+    <td>
+      Sí <%= survey.radio_button  :hot_water, :true %>
+      No <%= survey.radio_button  :hot_water, :false %>
+    </td>
+  </tr>
+  <tr>
+    <td>Cantidad de dormitorios</td>
+    <td><%= survey.text_field :bedrooms %></td>
+  </tr>
+  <tr>
+    <td>Cantidad de camas</td>
+    <td><%= survey.text_field :beds %></td>
+  </tr>
+</table>
