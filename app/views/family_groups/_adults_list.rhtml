@@ -6,14 +6,6 @@
     <th>Nombre</th>
     <th>Acciones</th>
   </tr>
-  <% @adults.each do |a| %>
-  <tr>
-    <td><%= run a.run %></td>
-    <td><%= a.fullname %></td>
-    <td>
-      <%= link_to image_tag('edit_family_group.png', :title => 'Editar grupo familiar'), :action => 'edit', :id => a.family_group %>
-    </td>
-  </tr>
-  <% end %>
+  <%= render :partial => "adult_item", :collection => @adults %>
 </table>
 <% end %>

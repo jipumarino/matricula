@@ -1,0 +1,8 @@
+<tr>
+  <td><%= run student_item.run %></td>
+  <td><%= student_item.fullname %></td>
+  <td><%= grade_format student_item.next_level %></td>
+  <td>
+    <%= link_to image_tag('edit_family_group.png', :title=>'Editar grupo familiar'), :action => 'edit', :id => student_item.family_group %>
+  </td>
+</tr>

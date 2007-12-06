@@ -7,15 +7,6 @@
   <th>Curso</th>
   <th>Acciones</th>
 </tr>
-<% @students.each do |s| %>
-<tr>
-  <td><%= run s.run %></td>
-  <td><%= s.fullname %></td>
-  <td><%= grade_format s.next_level %></td>
-  <td>
-    <%= link_to image_tag('edit_family_group.png', :title=>'Editar grupo familiar'), :action => 'edit', :id => s.family_group %>
-  </td>
-</tr>
-<% end %>
+<%= render :partial => 'student_item', :collection => @students %>
 </table>
 <% end %>
