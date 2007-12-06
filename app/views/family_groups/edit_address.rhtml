@@ -1,5 +1,5 @@
 <h2>Editar dirección</h2>
-<% form_for :address, @address, :url => {:action => 'edit_address', :id => @address} do |f|%>
+<% tabular_form_for :address, @address, :url => {:action => 'edit_address', :id => @address} do |f|%>
 <%= render :partial => 'address', :object => f %>
 <%= submit_tag "Guardar dirección" %>
 <% end %>

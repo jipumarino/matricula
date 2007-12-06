@@ -1,5 +1,5 @@
 <h2>Nueva dirección</h2>
-<% form_for :address, @address, :url => {:action => 'add_address', :id => @fg} do |f|%>
+<% tabular_form_for :address, @address, :url => {:action => 'add_address', :id => @fg} do |f|%>
 <%= render :partial => 'address', :object => f %>
 <%= submit_tag "Guardar dirección" %>
 <% end %>

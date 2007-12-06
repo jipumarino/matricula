@@ -1,5 +1,5 @@
 <h2>Encuesta socioeconómica</h2>
-<% form_for :survey, @survey, :url => {:action => 'edit_survey', :id => @fg } do |f| %>
+<% tabular_form_for :survey, @survey, :url => {:action => 'edit_survey', :id => @fg} do |f| %>
 <%= render :partial => 'survey', :object => f %>
 <%= submit_tag 'Guardar encuesta' %>
 <% end %>

@@ -1,5 +1,5 @@
 <h2>Editar adulto</h2>
-<% form_for :adult, @adult, :url => {:action => 'edit_adult', :id => @adult} do |f|%>
+<% tabular_form_for :adult, @adult, :url => {:action => 'edit_adult', :id => @adult} do |f|%>
 <%= render :partial => 'adult', :object => f %>
 <%= submit_tag "Guardar adulto" %>
 <% end %>

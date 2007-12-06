@@ -1,5 +1,5 @@
 <h2>Nuevo adulto</h2>
-<% form_for :adult, @adult, :url => {:action => 'add_adult', :id => @fg} do |f|%>
+<% tabular_form_for :adult, @adult, :url => {:action => 'add_adult', :id => @fg} do |f|%>
 <%= render :partial => 'adult', :object => f %>
 <%= submit_tag "Guardar adulto" %>
 <% end %>
