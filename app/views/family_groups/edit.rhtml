@@ -12,7 +12,7 @@
   <%= render :partial => 'student_item_details', :collection => @students %>
 </table>
 <% end %>
-<%= link_to 'Agregar alumno', :action => 'add_student', :id => @fg %>
+<%= link_to image_tag('add.png')+'Agregar alumno', :action => 'add_student', :id => @fg %>
 <hr />
 
 <h2>Adultos</h2>
@@ -28,7 +28,7 @@
   <%= render :partial => 'adult_item_details', :collection => @adults %>
 </table>
 <% end %>
-<%= link_to 'Agregar adulto', :action => 'add_adult', :id => @fg %>
+<%= link_to image_tag('add.png')+'Agregar adulto', :action => 'add_adult', :id => @fg %>
 <hr />
 
 <h2>Direcciones</h2>
@@ -43,23 +43,23 @@
   <%= render :partial => 'address_item_details', :collection => @addresses %>
 </table>
 <% end %>
-<%= link_to 'Agregar dirección', :action => 'add_address', :id => @fg %>
+<%= link_to image_tag('add.png')+'Agregar dirección', :action => 'add_address', :id => @fg %>
 
 
 <hr />
 
 <h2>Encuesta socioeconómica</h2>
 <% if @survey.nil? %>
-<%= link_to 'Responder encuesta', :action => 'take_survey', :id => @fg %>
+<%= link_to image_tag('new.png')+'Responder encuesta', :action => 'take_survey', :id => @fg %>
 <% else %>
 <%= render :partial => 'survey_display', :object => @survey %>
-<%= link_to 'Editar encuesta', :action => 'edit_survey', :id => @fg %>
+<%= link_to image_tag('edit.png')+'Editar encuesta', :action => 'edit_survey', :id => @fg %>
 <% end %>
 
 <hr />
 <h2>Compromiso de pago</h2>
 <% if @fg.has_guardian? and @fg.has_survey? %>
-<%= link_to 'Imprimir compromiso', {:action => 'print_ticket', :id => @fg}, :popup => true %>
+<%= link_to image_tag("print.png")+'Imprimir compromiso', {:action => 'print_ticket', :id => @fg}, :popup => true %>
 <% else %>
 Para imprimir el compromiso de pago se debe haber contestado la encuesta socioeconómica y definir un apoderado.
 <% end %>
