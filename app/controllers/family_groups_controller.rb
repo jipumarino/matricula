@@ -16,6 +16,8 @@ class FamilyGroupsController < ApplicationController
     @fg.save
     redirect_to :action => 'edit', :id => @fg
   end
+  
+  
 
   def delete
     @fg = FamilyGroup.find(params[:id])

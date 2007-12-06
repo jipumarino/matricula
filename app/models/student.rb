@@ -4,11 +4,12 @@ class Student < ActiveRecord::Base
   belongs_to  :mother, :class_name => "Adult", :foreign_key => "mother_id"
 
   before_validation :format_run
+  after_validation :titleize_name
 
   validates_presence_of :fathers_name, :mothers_name, :names, :sex, :next_level
 
   validates_inclusion_of :sex, :in => %w{M F}
-
+  
   def fullname
     fathers_name+" "+mothers_name+", "+names
   end
@@ -23,6 +24,12 @@ class Student < ActiveRecord::Base
 
   def format_run
     self.run.gsub!(/[.]/,'')
+  end
+
+  def titleize_name
+    self.names = self.names.titleize
+    self.fathers_name = self.fathers_name.titleize
+    self.mothers_name = self.mothers_name.titleize
   end
     
 end

@@ -2,6 +2,7 @@ class Adult < ActiveRecord::Base
   belongs_to  :family_group, :dependent => true
 
   before_validation :set_income, :format_rut
+  after_validation :titleize_name
 
   validates_presence_of :fathers_name, :mothers_name, :names, :sex
 
@@ -36,4 +37,11 @@ class Adult < ActiveRecord::Base
   def format_rut
     self.run.gsub!(/[.]/,'')
   end
+
+  def titleize_name
+    self.names = self.names.titleize
+    self.fathers_name = self.fathers_name.titleize
+    self.mothers_name = self.mothers_name.titleize
+  end
+    
 end
