@@ -1,0 +1,9 @@
+<tr class="<%= cycle('odd-item','even-item') %>">
+  <td><%= address_item_details.line1+"<br />"+address_item_details.line2 %></td>
+  <td><%= address_item_details.phone %></td>
+  <td><%= address_item_details.comuna %></td>
+  <td>
+    <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_address', :id => address_item_details %>
+    <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_address', :id => address_item_details}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+  </td>
+</tr>

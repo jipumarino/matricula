@@ -9,17 +9,7 @@
     <th>Curso</th>
     <th>Acciones</th>
   </tr>
-  <% @students.each do |s| %>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td><%= run s.run %></td>
-    <td><%= s.fullname %></td>
-    <td><%= grade_format s.next_level %></td>
-    <td>
-      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_student', :id => s %>
-      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_student', :id => s}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>
-    </td>
-  </tr>
-  <% end %>
+  <%= render :partial => 'student_item_details', :collection => @students %>
 </table>
 <% end %>
 <%= link_to 'Agregar alumno', :action => 'add_student', :id => @fg %>
@@ -35,19 +25,7 @@
     <th>Apoderado</th>
     <th>Acciones</th>
   </tr>
-  <% @adults.each do |s| %>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td><%= run s.run %></td>
-    <td><%= s.fullname %></td>
-    <td><%= dinero s.income %></td>
-    <td><%= s.is_guardian? ? 'Sí':'No' %></td>
-    <td>
-      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_adult', :id => s %>
-      <%= (link_to image_tag('set_guardian.png', :title => 'Seleccionar como apoderado'), :action => 'set_guardian', :id => s) unless s.is_guardian%>
-      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_adult', :id => s}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
-    </td>
-  </tr>
-  <% end %>
+  <%= render :partial => 'adult_item_details', :collection => @adults %>
 </table>
 <% end %>
 <%= link_to 'Agregar adulto', :action => 'add_adult', :id => @fg %>
@@ -62,17 +40,7 @@
     <th>Comuna</th>
     <th>Acciones</th>
   </tr>
-  <% @addresses.each do |a| %>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td><%= a.line1+"<br />"+a.line2 %></td>
-    <td><%= a.phone %></td>
-    <td><%= a.comuna %></td>
-    <td>
-      <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_address', :id => a %>
-      <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_address', :id => a}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
-    </td>
-  </tr>
-  <% end %>
+  <%= render :partial => 'address_item_details', :collection => @addresses %>
 </table>
 <% end %>
 <%= link_to 'Agregar dirección', :action => 'add_address', :id => @fg %>
@@ -84,36 +52,7 @@
 <% if @survey.nil? %>
 <%= link_to 'Responder encuesta', :action => 'take_survey', :id => @fg %>
 <% else %>
-<table class="form">
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Pertenencia de la vivienda</td>
-    <td><%= @survey.belonging %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Monto que se paga</td>
-    <td><%= @survey.payment_amount %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Material de construcción</td>
-    <td><%= @survey.building_material %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Pertenencia del baño</td>
-    <td><%= @survey.bathroom_belonging %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Agua caliente</td>
-    <td><%= @survey.hot_water %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Cantidad de dormitorios</td>
-   <td><%= @survey.bedrooms %></td>
-  </tr>
-  <tr class="<%= cycle('odd-item','even-item') %>">
-    <td>Cantidad de camas</td>
-    <td><%= @survey.beds %></td>
-  </tr>
-</table>
+<%= render :partial => 'survey_display', :object => @survey %>
 <%= link_to 'Editar encuesta', :action => 'edit_survey', :id => @fg %>
 <% end %>
 

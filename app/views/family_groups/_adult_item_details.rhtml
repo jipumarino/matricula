@@ -1,0 +1,11 @@
+<tr class="<%= cycle('odd-item','even-item') %>">
+  <td><%= run adult_item_details.run %></td>
+  <td><%= adult_item_details.fullname %></td>
+  <td><%= dinero adult_item_details.income %></td>
+  <td><%= adult_item_details.is_guardian? ? 'Sí':'No' %></td>
+  <td>
+    <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_adult', :id => adult_item_details %>
+    <%= (link_to image_tag('set_guardian.png', :title => 'Seleccionar como apoderado'), :action => 'set_guardian', :id => adult_item_details) unless adult_item_details.is_guardian%>
+    <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_adult', :id => adult_item_details}, :confirm => "¿Está seguro que desear eliminar este adulto?" %>
+  </td>
+</tr>
