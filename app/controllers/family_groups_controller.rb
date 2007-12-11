@@ -138,7 +138,7 @@ class FamilyGroupsController < ApplicationController
 
   def find_person
     if request.xhr?
-      if params[:search_criteria].strip.length > 0
+      if params[:search_criteria].strip.length > 2
         @students = Student.find_by_name(params[:search_criteria])
         @adults = Adult.find_by_name(params[:search_criteria])
       end     

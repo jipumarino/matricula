@@ -2,7 +2,7 @@
 <table>
   <tr>
     <td>
-      <!--      <img src=/images/logo_san_alberto_bn.png /> -->
+            <img src=/images/logo_san_alberto_bn.png /> 
     </td>
   </tr>
   <tr>
@@ -13,11 +13,10 @@
   </tr>
   <tr>
     <td colspan="2">
-      <br />
-      <p>Yo, <%= @guardian.names %> <%= @guardian.fathers_name %> <%= @guardian.mothers_name %>, R.U.T. <%= run @guardian.run %>, apoderado de los menores
+      <p>Yo, <%= @guardian.names %> <%= @guardian.fathers_name %> <%= @guardian.mothers_name %><%= ", R.U.T." unless @guardian.run.blank? %> <%= run @guardian.run %>, apoderado de los menores
       <ul>
         <% @fg.students.each do |s| %>
-        <li> <%=h s.names %> <%=h s.fathers_name %> <%=h s.mothers_name %>, R.U.N. <%=run s.run %>, a matricularse en <%= grade_format(s.next_level) %></li> 
+        <li> <%=h s.names %> <%=h s.fathers_name %> <%=h s.mothers_name %><%= ", R.U.N." unless s.run.blank? %> <%=run s.run %>, a matricularse en <%= grade_format(s.next_level) %></li> 
         <% end %>
 </ul>
       declaro que:</p>
@@ -31,14 +30,13 @@
           <% if c.income > 0 %><li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %>.-</li><% end %>
           <% end %>
         </ul>
-        <br />
         <p>Por lo tanto, los ingresos totales de mi familia, es decir, la <em>suma de los ingresos de todos los miembros del grupo familiar</em>, son de <%= dinero @total_income %>.-</p>
         </li>
 
         <li>
         Estoy en conocimiento de que la no presentaci&oacute;n de los documentos que acreditan estos ingresos implica que el pago por cada alumno matriculado corresponder&aacute; al m&aacute;ximo, teniendo como &uacute;ltimo plazo para revertir esta situaci&oacute;n el vencimiento de la primera cuota, es decir, el 30 de marzo de 2008.
         <br />
-        <br />
+      <br />
         </li>
 
         <li>
@@ -51,9 +49,9 @@
             es una falta grave.</b> </li>
           <li> Colaborar&eacute; con la asistente social en caso de ser requerida m&aacute;s informaci&oacute;n o documentaci&oacute;n. </li>
         </ol>
-        <br />
         </li>
 
+      <br />
         <li>
         <b>Estoy en conocimiento de que la cuota mensual a partir de marzo de 2008 ser&aacute; de <%= dinero @mensuality %>.-</b>, correspondiente a
         
@@ -83,7 +81,6 @@
     </td>
   </tr>
 </table>
-<br />
 <br />
 
 
