@@ -1,0 +1,17 @@
+<h2>Matriculados en el nivel <%= grade_format @students.first.next_level %></h2>
+<table class='list'>
+  <tr>
+    <th>Nombre</th>
+    <th>RUN</th>
+    <th>Sexo</th>
+  </tr>
+<% @students.each do |s| %>
+<tr class="<%= cycle('odd-item','even-item') %>">
+  <td><%= s.fullname %></td>
+  <td><%= run s.run %></td>
+  <td><%= s.sex %></td>
+</tr>
+
+
+<% end %>
+</table>
