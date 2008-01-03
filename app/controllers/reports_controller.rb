@@ -9,5 +9,7 @@ class ReportsController < ApplicationController
     levels.each do |l|
       @students[l] = Student.find_all_by_next_level(l, :order => 'next_level, fathers_name, mothers_name')
     end
+
+    render :layout => 'print'
   end
 end
