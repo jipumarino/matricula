@@ -1,0 +1,22 @@
+<h2>Listado completo de matriculados</h2>
+<% levels.each do |l|%>
+<h3>Matriculados en el nivel <%= grade_format l %></h3>
+<table class='list'>
+  <tr>
+    <th>Nombre</th>
+    <th>RUN</th>
+    <th>Sexo</th>
+  </tr>
+  <% @students[l].each do |s| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= s.fullname %></td>
+    <td><%= run s.run %></td>
+    <td><%= s.sex %></td>
+  </tr>
+
+
+  <% end %>
+</table>
+
+<% end %>
+
