@@ -4,12 +4,15 @@
     <th>Nombre</th>
     <th>RUN</th>
     <th>Sexo</th>
+    <th>Acciones</th>
   </tr>
 <% @students.each do |s| %>
 <tr class="<%= cycle('odd-item','even-item') %>">
   <td><%= s.fullname %></td>
   <td><%= run s.run %></td>
   <td><%= s.sex %></td>
+  <td> 
+    <%= link_to image_tag('edit.png', :title=>'Editar alumno'), {:action => 'edit_student', :controller => 'family_groups', :id => s} %>
 </tr>
 
 
