@@ -1,7 +1,7 @@
 <h2>Reportes</h2>
 <h3>Reportes de matriculados por nivel</h3>
 <% form_tag(:action => 'level') do %> 
-<%= select 'student', 'level', levels_choices %>
+<%= select 'student', 'level', levels_choices, :include_blank => true %>
 <%= submit_tag 'Ver reporte' %>
 <% end %>
 
