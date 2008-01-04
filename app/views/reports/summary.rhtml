@@ -1,0 +1,13 @@
+<h2>Resumen de matriculados</h2>
+<table class='list'>
+  <tr>
+    <th>Nivel</th>
+    <th>Matriculados</th>
+  </tr>
+  <% levels.each do |l|%>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= grade_format l %></td>
+    <td><%= @students_amounts[l] %></td>
+  </tr>
+  <% end %>
+</table>
