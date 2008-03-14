@@ -125,10 +125,6 @@ class FamilyGroupsController < ApplicationController
     end
   end
 
-  def print_ticket
-    @fg = FamilyGroup.find(params[:id])
-  end
-
   def cancel_creation
     @fg = FamilyGroup.find(params[:id])
     @fg.destroy
