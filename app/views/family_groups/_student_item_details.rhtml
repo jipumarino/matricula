@@ -2,6 +2,7 @@
   <td><%= run student_item_details.run %></td>
   <td><%= student_item_details.fullname %></td>
   <td><%= grade_format student_item_details.next_level %></td>
+  <td><%= student_item_details.section %></td>
   <td>
     <%= link_to image_tag('edit.png', :title => 'Editar'), :action => 'edit_student', :id => student_item_details %>
     <%= link_to image_tag('delete.png', :title => 'Eliminar'), {:action => 'delete_student', :id => student_item_details}, :confirm => "¿Está seguro que desea eliminar este alumno?" %>

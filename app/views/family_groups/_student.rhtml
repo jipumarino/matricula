@@ -30,8 +30,13 @@
     <td><%= error_message_on :student, :birthday %></td>
   </tr>
   <tr>
-    <td>Curso al que se matricula</td>
+    <td>Nivel al que se matricula</td>
     <td><%= student.select :next_level, levels_choices, :include_blank => true %></td>
     <td><%= error_message_on :student, :next_level %></td>
   </tr>
+  <tr>
+    <td>Curso al que se matricula</td>
+    <td><%= student.select :section, sections_choices, :include_blank => true %></td>
+    <td><%= error_message_on :student, :section %></td>
+
 </table>

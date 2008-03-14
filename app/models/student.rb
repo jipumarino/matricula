@@ -7,6 +7,8 @@ class Student < ActiveRecord::Base
   after_validation :titleize_name
 
   validates_presence_of :fathers_name, :mothers_name, :names, :sex, :next_level
+  
+#  validates_inclusion_of :section, :in => %w{A B C D} + [""]
 
   validates_inclusion_of :sex, :in => %w{M F}
   

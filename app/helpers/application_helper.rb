@@ -22,6 +22,14 @@ module ApplicationHelper
   def levels_choices
     levels.map{|l| [grade_format(l), l]}
   end
+  
+  def sections
+    %w{A B C D}
+  end
+  
+  def sections_choices
+    sections.map{|l| [l,l]}
+  end
 
 end
 
