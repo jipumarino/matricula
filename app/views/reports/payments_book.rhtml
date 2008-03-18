@@ -2,7 +2,7 @@
 <% levels.each do |l|%>
   <% sections.each do |sec|%>
     
-   <% continue if @students[l][sec].empty? %>
+   <% next if @students[l][sec].empty? %>
 <h3><%= grade_format(l) +" "+sec%></h3>
 <table class='list'>
   <tr>
