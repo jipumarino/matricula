@@ -1,6 +1,6 @@
 module FamilyGroupsHelper
   def dinero(num)
-    number_to_currency(num, :precision => 0, :unit => "$", :separator => ",", :delimiter => ".")
+    number_to_currency(num, :precision => 0, :unit => "$", :separator => ",", :delimiter => ".")+".-"
   end
 
   def educational_levels_choices

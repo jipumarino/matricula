@@ -27,10 +27,10 @@
         <br />
         <ul>
           <% @adults.each do |c| %>
-          <% if c.income > 0 %><li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %>.-</li><% end %>
+          <% if c.income > 0 %><li><%= c.names + " " + c.fathers_name + " " + c.mothers_name %>, con un monto de <%= dinero c.income %></li><% end %>
           <% end %>
         </ul>
-        <p>Por lo tanto, los ingresos totales de mi familia, es decir, la <em>suma de los ingresos de todos los miembros del grupo familiar</em>, son de <%= dinero @total_income %>.-</p>
+        <p>Por lo tanto, los ingresos totales de mi familia, es decir, la <em>suma de los ingresos de todos los miembros del grupo familiar</em>, son de <%= dinero @total_income %></p>
         </li>
 
         <li>
@@ -53,11 +53,13 @@
 
       <br />
         <li>
-        <b>Estoy en conocimiento de que la cuota mensual a partir de marzo de 2008 ser&aacute; de <%= dinero @mensuality %>.-</b>, correspondiente a
+        <b>Estoy en conocimiento de que la cuota mensual a partir de marzo de 2008 ser&aacute; de <%= dinero @mensuality %></b>, correspondiente a
         
         <% if @students_basic > 0 %>
         <%= @students_basic %> estudiante<%= "s" if @students_basic > 1 %> en enseñanza básica<% if @students_media > 0 and @students_basic > 0 %>
-(<%= dinero @mensuality_basic %>.-)
+<% unless @casa_mujer %>
+(<%= dinero @mensuality_basic %>)
+<% end %>
 <% end %>
         <% end %>
         
@@ -66,12 +68,17 @@
         <% if @students_media > 0 %>
         <%= @students_media %> estudiante<%= "s" if @students_media > 1 %> en enseñanza media 
 <% if @students_media > 0 and @students_basic > 0 %>
-(<%= dinero @mensuality_media %>.-)
+  <% unless @casa_mujer %>
+(<%= dinero @mensuality_media %>)
+<% end %>
 <% end %>
 
         <% end %>
 
-<%= "." if not @students_media > 0 and @students_basic > 0 -%>
+<%= "." if @students_media > 0 and @students_basic > 0 -%> 
+<% if @casa_mujer %>
+  Este monto corresponde a $1.000.- por cada estudiante, de acuerdo a beneficio Casa de la Mujer
+<% end %>
 
 
         </li>

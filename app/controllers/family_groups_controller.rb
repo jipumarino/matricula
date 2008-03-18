@@ -178,7 +178,10 @@ class FamilyGroupsController < ApplicationController
     @students_basic = @fg.students_basic
     @students_media = @fg.students_media
     @total_income = @fg.total_income
+    @casa_mujer = @fg.survey.casa_mujer?
 
+    @students = @students_basic+@students_media
+    
     @mensuality_basic = case @students_basic
 
                         when 0: 0
@@ -258,6 +261,8 @@ class FamilyGroupsController < ApplicationController
                        end
 
     @mensuality = @mensuality_basic + @mensuality_media
+    
+    @mensuality = 1000*@students if @casa_mujer
 
     render :layout => false
   end
