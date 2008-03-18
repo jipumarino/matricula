@@ -6,11 +6,11 @@
 <h3><%= grade_format(l) +" "+sec%><%= "(No asignados)" if sec.empty? %></h3>
 <table class='list'>
   <tr>
-    <th>Nombre</th>
-    <th>Hermanos</th>
-    <th>Cuota</th>
+    <th width="600px">Nombre</th>
+    <th width="110px">Hermanos</th>
+    <th width="65px">Cuota</th>
     <% %w{Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic}.each do |month| %>
-      <th><%=month%></th>
+      <th width="65px"><%=month%></th>
     <% end %>
     
   </tr>

@@ -56,7 +56,6 @@ def payments_book
         @students[l][s] = Student.find_all_by_next_level_and_section(l, s, :order => 'next_level, section, fathers_name, mothers_name')
       end
     end
-
     render :layout => 'print'
   
 end
