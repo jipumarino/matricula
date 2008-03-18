@@ -1,9 +1,9 @@
 <h2>Libro de pagos</h2>
-<% levels.each do |l|%>
-  <% sections.each do |sec|%>
+<% @levels.each do |l|%>
+  <% @sections.each do |sec|%>
     
    <% next if @students[l][sec].empty? %>
-<h3><%= grade_format(l) +" "+sec%></h3>
+<h3><%= grade_format(l) +" "+sec%><%= "(No asignados)" if sec.empty? %></h3>
 <table class='list'>
   <tr>
     <th>Nombre</th>
