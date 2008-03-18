@@ -1,0 +1,32 @@
+<h2>Libro de pagos</h2>
+<% levels.each do |l|%>
+  <% sections.each do |sec|%>
+    
+<h3><%= grade_format(l) +" "+sec%></h3>
+<table class='list'>
+  <tr>
+    <th>Nombre</th>
+    <th>Hermanos</th>
+    <th>Cuota</th>
+    <% %w{Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic}.each do |month| %>
+      <th><%=month%></th>
+    <% end %>
+    
+  </tr>
+  <% @students[l][sec].each do |s| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= s.fullname %></td>
+    <td><%= s.siblings_levels.join(",") if s.siblings_levels %></td>
+    <td align="right"><%= dinero(s.family_group.mensuality,false) if s.family_group and s.lesser? %></td>
+    <% 12.times do %>
+    <td>&nbsp;</td>
+    <% end %>
+          
+  </tr>
+
+
+  <% end %>
+</table>
+<% end %>
+<% end %>
+

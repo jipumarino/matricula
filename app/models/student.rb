@@ -33,5 +33,24 @@ class Student < ActiveRecord::Base
     self.fathers_name = self.fathers_name.titleize
     self.mothers_name = self.mothers_name.titleize
   end
+  
+  def siblings
+    family_group.students - [self] unless family_group.nil?
+  end
+  
+  def siblings_levels
+    unless siblings.nil?
+    siblings.map{|s|
+      if s.section
+        s.next_level+s.section
+      else s.next_level 
+      end
+    } 
+      end
+  end
+  
+  def lesser?
+    (self == family_group.lesser_sibling) and not siblings.nil?
+  end
     
 end

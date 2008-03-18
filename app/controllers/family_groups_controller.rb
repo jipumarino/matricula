@@ -182,87 +182,12 @@ class FamilyGroupsController < ApplicationController
 
     @students = @students_basic+@students_media
     
-    @mensuality_basic = case @students_basic
+    @mensuality_basic = @fg.mensuality_basic
+    @mensuality_media = @fg.mensuality_media
 
-                        when 0: 0
-
-                        when 1
-                          case @total_income
-                          when 0..99_999:         2000
-                          when 100_000..119_999:  3100
-                          when 120_000..149_999:  3300
-                          when 150_000..199_999:  3800
-                          when 200_000..249_999:  4600
-                          when 250_000..299_999:  5400
-                          else                    6600
-                          end
-
-                        when 2
-                          case @total_income
-                          when 0..99_999:        3000
-                          when 100_000..119_999:  4600
-                          when 120_000..149_999:  4800
-                          when 150_000..199_999:  5700
-                          when 200_000..249_999:  6900
-                          when 250_000..299_999:  8100
-                          else                    9900
-                          end
-
-                        else
-                          case @total_income
-                          when 0..99_999:        4000
-                          when 100_000..119_999:  6200
-                          when 120_000..149_999:  6500
-                          when 150_000..199_999:  7600
-                          when 200_000..249_999:  9200
-                          when 250_000..299_999:  10800
-                          else                    12600
-                          end
-                        end
-
-
-
-    @mensuality_media = case @students_media
-
-                       when 0: 0
-
-                       when 1
-                         case @total_income
-                         when 0..99_999:        7500
-                         when 100_000..119_999:  8900
-                         when 120_000..149_999:  9800
-                         when 150_000..199_999:  11600
-                         when 200_000..249_999:  13000
-                         when 250_000..299_999:  15400
-                         else                    19200
-                         end
-
-                       when 2
-                         case @total_income
-                         when 0..100_000:        11300
-                         when 100_000..119_999:  13400
-                         when 120_000..149_999:  14700
-                         when 150_000..199_999:  17400
-                         when 200_000..249_999:  19500
-                         when 250_000..299_999:  23100
-                         else                    28800
-                         end
-
-                       else
-                         case @total_income
-                         when 0..100_000:        14500
-                         when 100_000..119_999:  17800
-                         when 120_000..149_999:  19600
-                         when 150_000..199_999:  23200
-                         when 200_000..249_999:  26000
-                         when 250_000..299_999:  30800
-                         else                    38400
-                         end
-                       end
-
-    @mensuality = @mensuality_basic + @mensuality_media
+    @mensuality = @fg.mensuality
     
-    @mensuality = 1000*@students if @casa_mujer
+    
 
     render :layout => false
   end

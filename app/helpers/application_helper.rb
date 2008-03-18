@@ -31,5 +31,15 @@ module ApplicationHelper
     sections.map{|l| [l,l]}
   end
 
+  def dinero(num, terminal=true)
+    number = number_to_currency(num, :precision => 0, :unit => "$", :separator => ",", :delimiter => ".")
+    if terminal
+      return number+".-"
+    else
+      return number
+    end
+  end
+
+  
 end
 
