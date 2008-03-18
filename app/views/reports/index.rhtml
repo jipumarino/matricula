@@ -6,8 +6,11 @@
 <%= submit_tag 'Ver reporte' %>
 <% end %>
 
-<h3>Reporte completo de matriculados</h3>
-<%= link_to 'Ver reporte', :action=>'total' %>
+<h3>Reporte completo de matriculados por nivel</h3>
+<%= link_to 'Ver reporte', :action=>'total_by_level' %>
+
+<h3>Reporte completo de matriculados por curso</h3>
+<%= link_to 'Ver reporte', :action=>'total_by_section' %>
 
 <h3>Resumen de matriculados</h3>
 <%= link_to 'Ver reporte', :action=>'summary' %>
