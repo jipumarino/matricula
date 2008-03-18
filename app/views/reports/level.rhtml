@@ -1,21 +1,31 @@
 <h2>Matriculados en el nivel <%= grade_format @students.first.next_level %></h2>
+<% form_tag :action => 'level_update', :level => @level do %>
 <table class='list'>
-  <tr>
-    <th>Nombre</th>
-    <th>RUN</th>
-    <th>Sexo</th>
-    <th>Acciones</th>
-  </tr>
-<% @students.each do |s| %>
-<tr class="<%= cycle('odd-item','even-item') %>">
-  <td><%= s.fullname %></td>
-  <td><%= run s.run %></td>
-  <td><%= s.sex %></td>
-  <td> 
-    <%= link_to image_tag('edit.png', :title=>'Editar alumno'), {:action => 'edit_student', :controller => 'family_groups', :id => s} %>
+<tr>
+  <th>Nombre</th>
+  <th>RUN</th>
+  <th>Sexo</th>
+  <th>Curso</th>
+  <th>Acciones</th>
 </tr>
+<% @students.each do |@s| %>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+      <td><%= @s.fullname %></td>
+    <td><%= run @s.run %></td>
+    <td><%= @s.sex %></td>
+    <% fields_for "s[]" do |f| %>
+      <td><%= f.select :section, sections_choices, :include_blank => true %></td>
+    <% end %>
+    <td> 
+      <%= link_to image_tag('edit.png', :title=>'Editar alumno'), {:action => 'edit_student', :controller => 'family_groups', :id => @s} %>
+    </td>
+  </tr>
 
 
 <% end %>
 </table>
 <b>Total de alumnos matriculados: <%= @students.size %></b>
+<hr />
+<%= submit_tag 'Guardar cambios' %>
+<% end %>
+<%= button_to "Cancelar edición", {:action => 'index'} %>

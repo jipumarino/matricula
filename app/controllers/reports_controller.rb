@@ -1,8 +1,18 @@
 class ReportsController < ApplicationController
   def level
-    @students = Student.find_all_by_next_level(params[:student][:level], :order => 'fathers_name, mothers_name')
+    @level = params[:student][:level]
+    @students = Student.find_all_by_next_level(@level, :order => 'section, fathers_name, mothers_name')
   end
 
+  def level_update
+    @level = params[:level]
+    @students = Student.find_all_by_next_level(@level)
+    @students.each{ |s| s.attributes = params[:s][s.id.to_s]}
+    @students.each(&:save)
+    redirect_to :action => 'index'
+  end
+  
+  
   def total_by_level
     @students = {}
     levels = %w{PK K 1B 2B 3B 4B 5B 6B 7B 8B 1M 2M 3M 4M}
