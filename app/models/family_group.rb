@@ -34,7 +34,7 @@ class FamilyGroup < ActiveRecord::Base
     when 0: 0
 
     when 1
-      case @total_income
+      case total_income
       when 0..99_999:         2000
       when 100_000..119_999:  3100
       when 120_000..149_999:  3300
@@ -45,7 +45,7 @@ class FamilyGroup < ActiveRecord::Base
       end
 
     when 2
-      case @total_income
+      case total_income
       when 0..99_999:        3000
       when 100_000..119_999:  4600
       when 120_000..149_999:  4800
@@ -56,7 +56,7 @@ class FamilyGroup < ActiveRecord::Base
       end
 
     else
-      case @total_income
+      case total_income
       when 0..99_999:        4000
       when 100_000..119_999:  6200
       when 120_000..149_999:  6500
@@ -79,7 +79,7 @@ class FamilyGroup < ActiveRecord::Base
     when 0: 0
 
     when 1
-      case @total_income
+      case total_income
       when 0..99_999:        7500
       when 100_000..119_999:  8900
       when 120_000..149_999:  9800
@@ -90,7 +90,7 @@ class FamilyGroup < ActiveRecord::Base
       end
 
     when 2
-      case @total_income
+      case total_income
       when 0..100_000:        11300
       when 100_000..119_999:  13400
       when 120_000..149_999:  14700
@@ -101,7 +101,7 @@ class FamilyGroup < ActiveRecord::Base
       end
 
     else
-      case @total_income
+      case total_income
       when 0..100_000:        14500
       when 100_000..119_999:  17800
       when 120_000..149_999:  19600

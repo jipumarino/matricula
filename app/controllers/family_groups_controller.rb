@@ -186,9 +186,7 @@ class FamilyGroupsController < ApplicationController
     @mensuality_media = @fg.mensuality_media
 
     @mensuality = @fg.mensuality
-    
-    
-
+  
     render :layout => false
   end
 
