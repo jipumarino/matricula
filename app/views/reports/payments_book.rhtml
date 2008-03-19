@@ -9,7 +9,7 @@
     <th width="600px">Nombre</th>
     <th width="110px">Hermanos</th>
     <th width="65px">Cuota</th>
-    <% %w{Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic}.each do |month| %>
+    <% (["Beca", "Cuota real"]+%w{Mar Abr May Jun Jul Ago Sep Oct Nov Dic}+["Beca"]).each do |month| %>
       <th width="65px"><%=month%></th>
     <% end %>
     
@@ -19,7 +19,7 @@
     <td><%= s.fullname %></td>
     <td><%= s.siblings_levels.join(",") if s.siblings_levels %></td>
     <td align="right"><%= dinero(s.family_group.mensuality,false) if s.family_group and s.lesser? %></td>
-    <% 12.times do %>
+    <% 13.times do %>
     <td>&nbsp;</td>
     <% end %>
           
