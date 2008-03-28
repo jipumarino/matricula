@@ -1,12 +1,39 @@
-<h2>Libro de pagos</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center><img src=/images/logo_san_alberto.png /></center>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1>Financiamiento Compartido</h1>
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Libro de Registro</h2>
+<br />
+<br />
+<h2>Año 2008</h2>
+<% num_pagina=1 %>
 <% @levels.each do |l|%>
   <% @sections.each do |sec|%>
     
-   <% next if @students[l][sec].empty? %>
-<h3><%= grade_format(l) +" "+sec%><%= "(No asignados)" if sec.empty? %></h3>
+  <% next if @students[l][sec].empty? %>
+  <% num=1 %>
+<DIV style="page-break-after:always"></DIV>
+<table class="none"><tr><td><h3><%= grade_format(l) +" "+sec%><%= "(No asignados)" if sec.empty? %> </td><td><h3 align="right"> Año 2008 </h3></td></tr></table>
 <table class='list'>
   <tr>
-    <th width="600px">Nombre</th>
+    <th>#</th>
+    <th width="400px">Nombre</th>
     <th width="110px">Hermanos</th>
     <th width="65px">Cuota</th>
     <% (["Beca", "Cuota real"]+%w{Mar Abr May Jun Jul Ago Sep Oct Nov Dic}+["Beca"]).each do |month| %>
@@ -16,18 +43,30 @@
   </tr>
   <% @students[l][sec].each do |s| %>
   <tr class="<%= cycle('odd-item','even-item') %>">
+    <td><%= num %></td>
     <td><%= s.fullname %></td>
     <td><%= s.siblings_levels.join(",") if s.siblings_levels %></td>
     <td align="right"><%= dinero(s.family_group.mensuality,false) if s.family_group and s.lesser? %></td>
     <% 13.times do %>
     <td>&nbsp;</td>
     <% end %>
-          
+
+    <% num+=1 %>
   </tr>
 
+  <% end %>
 
+  <% (46-num).times do %>
+  <tr>
+    <td><%= num %></td>
+    <% num+=1 %>
+    <% 16.times  do %>
+    <td>&nbsp;</td>
+    <% end %>
+  </tr>
   <% end %>
 </table>
+<table class="none"><tr><td><p style="font-size:6pt;">Generado el <%= Time.now.strftime("%A %d de %B de %Y, a las %I:%M %p") %></p></td><td><p style="font-size:6pt;" align="right">Página <%=num_pagina+=1%></p></td></tr></table>
 <% end %>
 <% end %>
 

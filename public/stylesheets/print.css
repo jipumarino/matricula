@@ -1,5 +1,16 @@
 .formError { font-weight:bold; color:red; }
 a img {border:0px}
-table,td,th {border: 1px solid black;}
+table,td,th {border: 1px solid black; font-size: 6pt;}
 table {border-collapse:collapse;}
 table{border="1px" solid black; border="1" solid black; rules="all";}
+h3{font-size:10pt;}
+html{margin:0;}
+body{margin:0;}
+thead {display: table-header-group;}
+table {page-break-inside: avoid;}
+h1, h2 {text-align: center;}
+h1 {font-size: 20pt; font-variant: small-caps;}
+h2 {font-size: 18pt; font-variant: small-caps;}
+table.none td {border:0px}
+table.none {border:0px}
+table.none {width:100%}
