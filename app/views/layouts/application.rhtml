@@ -17,6 +17,7 @@
       <hr color="#27049D" width="80%" align="left" size="5px" style="margin-top:-10px" />
       <hr color="#E00714" width="50%" align="left" size="5px" />
       <hr color="#FDC000" width="30%" align="left" size="5px" />
+      <% if logged_in? %><%= link_to 'Cerrar sesión', session_path, :method => :delete %><% end %>
     </div>
     <div id="main" style="position:absolute;top:120px;" >
 

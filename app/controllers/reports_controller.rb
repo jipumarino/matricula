@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_filter :require_authentication
+
   def level
     @level = params[:student][:level]
     @students = Student.find_all_by_next_level(@level, :order => 'section, fathers_name, mothers_name')

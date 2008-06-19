@@ -1,5 +1,5 @@
 class Adult < ActiveRecord::Base
-  belongs_to  :family_group, :dependent => true
+  belongs_to  :family_group, :dependent => :destroy
 
   before_validation :set_income, :format_rut
   after_validation :titleize_name

@@ -5,5 +5,10 @@
   <li>
     <%= link_to 'Reportes y modificación por nivel', :controller=>'reports', :action => 'index' %>
   </li>
+  <% if logged_in? && current_user.administrator? %>
+  <li>
+    <%= link_to 'Adminstración de usuarios', users_url %>
+  </li>
+  <% end %>
 </ul>
 

@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to  :family_group, :dependent => true
+  belongs_to  :family_group, :dependent => :destroy
   belongs_to  :father, :class_name => "Adult", :foreign_key => "father_id"
   belongs_to  :mother, :class_name => "Adult", :foreign_key => "mother_id"
 

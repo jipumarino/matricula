@@ -1,4 +1,5 @@
 class FamilyGroupsController < ApplicationController
+  before_filter :require_authentication
 
   def edit
     @fg = FamilyGroup.find(params[:id])
