@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
+  include HoptoadNotifier::Catcher
  
   # Pick a unique cookie name to distinguish our session data from others'
   session :session_key => '_matricula2_session_id'
