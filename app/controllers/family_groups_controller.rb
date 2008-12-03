@@ -7,6 +7,7 @@ class FamilyGroupsController < ApplicationController
     @students = @fg.students
     @addresses = @fg.addresses
     @survey = @fg.survey
+
   end
 
   def index
@@ -14,6 +15,7 @@ class FamilyGroupsController < ApplicationController
 
   def create
     @fg = FamilyGroup.new
+    @fg.editor = User.find(session[:user_id])
     @fg.save
     redirect_to :action => 'edit', :id => @fg
   end
@@ -30,6 +32,7 @@ class FamilyGroupsController < ApplicationController
     @a = Adult.find(params[:id])
     @fg = @a.family_group
     @fg.guardian = @a
+    @fg.editor = User.find(session[:user_id])
     @fg.save
     redirect_to :action => :edit, :id => @fg
   end
@@ -48,6 +51,7 @@ class FamilyGroupsController < ApplicationController
   def edit_student
     @student = Student.find(params[:id])
     @student.update_attributes(params[:student])
+    @student.editor = User.find(session[:user_id])
     @fg = @student.family_group
     if request.post?
       if @student.save
@@ -81,6 +85,7 @@ class FamilyGroupsController < ApplicationController
   def edit_adult
     @adult = Adult.find(params[:id])
     @adult.update_attributes(params[:adult])
+    @adult.editor = User.find(session[:user_id])
     @fg = @adult.family_group
     if request.post?
       if @adult.save

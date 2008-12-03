@@ -3,6 +3,7 @@ class FamilyGroup < ActiveRecord::Base
   has_many    :adults
   has_many    :students
   belongs_to  :guardian, :class_name => "Adult", :foreign_key => "guardian_id"
+  belongs_to  :editor, :class_name => "User", :foreign_key => "updated_by"
   has_many    :addresses
 
   def has_guardian?
@@ -35,35 +36,35 @@ class FamilyGroup < ActiveRecord::Base
 
     when 1
       case total_income
-      when 0..99_999:         2000
-      when 100_000..119_999:  3100
-      when 120_000..149_999:  3300
-      when 150_000..199_999:  3800
-      when 200_000..249_999:  4600
-      when 250_000..299_999:  5400
-      else                    6600
+      when 0..99_999:         2200
+      when 100_000..119_999:  3400
+      when 120_000..149_999:  3600
+      when 150_000..199_999:  4200
+      when 200_000..249_999:  5100
+      when 250_000..299_999:  5900
+      else                    7300
       end
 
     when 2
       case total_income
-      when 0..99_999:        3000
-      when 100_000..119_999:  4600
-      when 120_000..149_999:  4800
-      when 150_000..199_999:  5700
-      when 200_000..249_999:  6900
-      when 250_000..299_999:  8100
-      else                    9900
+      when 0..99_999:         3300
+      when 100_000..119_999:  5100
+      when 120_000..149_999:  5300
+      when 150_000..199_999:  6300
+      when 200_000..249_999:  7600
+      when 250_000..299_999:  8900
+      else                   11000
       end
 
     else
       case total_income
-      when 0..99_999:        4000
-      when 100_000..119_999:  6200
-      when 120_000..149_999:  6500
-      when 150_000..199_999:  7600
-      when 200_000..249_999:  9200
-      when 250_000..299_999:  10800
-      else                    12600
+      when 0..99_999:         4400
+      when 100_000..119_999:  6800
+      when 120_000..149_999:  7200
+      when 150_000..199_999:  8400
+      when 200_000..249_999: 10200
+      when 250_000..299_999: 11800
+      else                   14600
       end
     end
 
@@ -80,35 +81,35 @@ class FamilyGroup < ActiveRecord::Base
 
     when 1
       case total_income
-      when 0..99_999:        7500
-      when 100_000..119_999:  8900
-      when 120_000..149_999:  9800
-      when 150_000..199_999:  11600
-      when 200_000..249_999:  13000
-      when 250_000..299_999:  15400
-      else                    19200
+      when 0..99_999:         8300
+      when 100_000..119_999:  9800
+      when 120_000..149_999: 10800
+      when 150_000..199_999: 12800
+      when 200_000..249_999: 14300
+      when 250_000..299_999: 17000
+      else                   21100
       end
 
     when 2
       case total_income
-      when 0..100_000:        11300
-      when 100_000..119_999:  13400
-      when 120_000..149_999:  14700
-      when 150_000..199_999:  17400
-      when 200_000..249_999:  19500
-      when 250_000..299_999:  23100
-      else                    28800
+      when 0..100_000:       12500
+      when 100_000..119_999: 14700
+      when 120_000..149_999: 16200
+      when 150_000..199_999: 19200
+      when 200_000..249_999: 21500
+      when 250_000..299_999: 25500
+      else                   31650
       end
 
     else
       case total_income
-      when 0..100_000:        14500
-      when 100_000..119_999:  17800
-      when 120_000..149_999:  19600
-      when 150_000..199_999:  23200
-      when 200_000..249_999:  26000
-      when 250_000..299_999:  30800
-      else                    38400
+      when 0..100_000:       16600
+      when 100_000..119_999: 19600
+      when 120_000..149_999: 21600
+      when 150_000..199_999: 25600
+      when 200_000..249_999: 28600
+      when 250_000..299_999: 34000
+      else                   42000
       end
     end
 
@@ -123,4 +124,8 @@ class FamilyGroup < ActiveRecord::Base
     students.sort{|x,y| levels.index(x.next_level) <=> levels.index(y.next_level)}.first
   end
   
+  def before_save
+    self.editor=@current_user
+  end
+
 end

@@ -1,5 +1,6 @@
 class Adult < ActiveRecord::Base
   belongs_to  :family_group, :dependent => :destroy
+  belongs_to  :editor, :class_name => "User", :foreign_key => "updated_by"
 
   before_validation :set_income, :format_rut
   after_validation :titleize_name

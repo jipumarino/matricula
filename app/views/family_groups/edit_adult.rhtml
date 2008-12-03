@@ -4,3 +4,7 @@
 <%= submit_tag "Guardar adulto" %>
 <% end %>
 <%= button_to "Cancelar edición", {:action => 'edit', :id => @fg} %>
+<% if @adult.editor %>
+<hr />
+Última edición: <%= @adult.updated_on %> por <%= @adult.editor.login %>.
+<% end %>

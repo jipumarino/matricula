@@ -67,3 +67,8 @@ Para imprimir el compromiso de pago se debe haber contestado la encuesta socioec
 <hr />
 
 <%= button_to 'Finalizar edición de grupo familiar', :action => 'index' %>
+
+<% if @fg.editor %>
+<hr />
+Última edición: <%= @fg.updated_on %> por <%= @fg.editor.login %>.
+<% end %>

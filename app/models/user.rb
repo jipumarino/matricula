@@ -66,6 +66,9 @@ class User < ActiveRecord::Base
     @activated
   end
 
+  def self.current_user
+  end
+
   protected
     # before filter 
     def encrypt_password
@@ -77,6 +80,5 @@ class User < ActiveRecord::Base
     def password_required?
       crypted_password.blank? || !password.blank?
     end
-    
     
 end

@@ -4,3 +4,7 @@
 <%= submit_tag "Guardar alumno" %>
 <% end %>
 <%= button_to "Cancelar edición", {:action => 'edit', :id => @fg} %>
+<% if @student.editor %>
+<hr />
+Última edición: <%= @student.updated_on %> por <%= @student.editor.login %>.
+<% end %>

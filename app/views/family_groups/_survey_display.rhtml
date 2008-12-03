@@ -1,7 +1,7 @@
 <table class="form">
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td>Pertenencia de la vivienda</td>
-    <td><%= survey_display.belonging %></td>
+    <td><%= Survey::Belonging.find{|x| x.last == survey_display.belonging}.first %></td>
   </tr>
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td>Monto que se paga</td>
@@ -31,4 +31,25 @@
     <td>Casa de la Mujer</td>
     <td><%= survey_display.casa_mujer %></td>
   </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Programa Chile Califica</td>
+    <td><%= survey_display.chile_califica %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Programa Chile Solidario</td>
+    <td><%= survey_display.chile_solidario %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Programa Puente</td>
+    <td><%= survey_display.puente %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Subsidio Único Familiar (SUF)</td>
+    <td><%= survey_display.suf %></td>
+  </tr>
+  <tr class="<%= cycle('odd-item','even-item') %>">
+    <td>Sistema de salud</td>
+    <td><%= survey_display.sistema_salud %></td>
+  </tr>
 </table>
+

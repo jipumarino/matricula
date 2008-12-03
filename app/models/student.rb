@@ -2,11 +2,12 @@ class Student < ActiveRecord::Base
   belongs_to  :family_group, :dependent => :destroy
   belongs_to  :father, :class_name => "Adult", :foreign_key => "father_id"
   belongs_to  :mother, :class_name => "Adult", :foreign_key => "mother_id"
+  belongs_to  :editor, :class_name => "User", :foreign_key => "updated_by"
 
   before_validation :format_run
   after_validation :titleize_name
 
-  validates_presence_of :fathers_name, :mothers_name, :names, :sex, :next_level
+  validates_presence_of :fathers_name, :mothers_name, :names, :sex, :next_level, :birthday, :section, :run
   
 #  validates_inclusion_of :section, :in => %w{A B C D} + [""]
 
