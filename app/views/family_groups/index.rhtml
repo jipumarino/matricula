@@ -15,7 +15,7 @@ Para editar un grupo familiar, ingrese el nombre o apellido de algún integrante
 <div id="results"></div>
 
 <%= observe_field 'search_criteria',
-:frequency => 0.5, 
+:frequency => 1.0, 
 :update => :results,
 :url => { :controller => 'family_groups', :action=> 'find_person' },
 :with => :search_criteria,

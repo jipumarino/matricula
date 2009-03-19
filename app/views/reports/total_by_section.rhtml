@@ -8,12 +8,14 @@
     <th>Nombre</th>
     <th>RUN</th>
     <th>Sexo</th>
+    <th>Última modificación</th>
   </tr>
   <% @students[l][sec].each do |s| %>
   <tr class="<%= cycle('odd-item','even-item') %>">
     <td><%= s.fullname %></td>
     <td><%= run s.run %></td>
     <td><%= s.sex %></td>
+    <td><%= s.family_group.survey.updated_on.to_s.gsub(" -0300","") if s.family_group and s.family_group.survey %></td>
   </tr>
 
 
